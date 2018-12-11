@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ivan's Development Blog
+title: "Ivan's Development Blog"
 email: ivan.z.cai@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here! You can edit this
@@ -27,6 +27,7 @@ github_username:  ivanzcai
 # Build settings
 markdown: kramdown
 theme: minima
+#theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
@@ -41,3 +42,14 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+    scope: 
+      path: ""
+      type: post
+    values:
+      layout: post 
+  
