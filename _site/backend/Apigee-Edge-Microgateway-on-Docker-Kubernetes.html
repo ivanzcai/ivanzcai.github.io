@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Apigee Edge Microgateway on Docker &amp; Kubernetes | Ivan’s Development Blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Apigee Edge Microgateway on Docker &amp; Kubernetes" />
+<meta name="author" content="Ivan Cai" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Apigee Edge Microgateway on Docker &amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes." />
+<meta property="og:description" content="Apigee Edge Microgateway on Docker &amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes." />
+<link rel="canonical" href="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" />
+<meta property="og:url" content="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" />
+<meta property="og:site_name" content="Ivan’s Development Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-01T00:00:00+10:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes","author":{"@type":"Person","name":"Ivan Cai"},"headline":"Apigee Edge Microgateway on Docker &amp; Kubernetes","dateModified":"2018-05-01T00:00:00+10:00","description":"Apigee Edge Microgateway on Docker &amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.","datePublished":"2018-05-01T00:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Ivan's Development Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ivan&#39;s Development Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/news/">Latest News!</a><a class="page-link" href="/contact/">Contact</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Apigee Edge Microgateway on Docker &amp; Kubernetes</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-05-01T00:00:00+10:00" itemprop="datePublished">May 1, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ivan Cai</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="apigee-edge-microgateway-on-docker--kubernetes">Apigee Edge Microgateway on Docker &amp; Kubernetes</h1>
+<p>This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+  <li>Docker installation. For more info please visit <a href="https://www.docker.com/get-docker">Docker home page</a></li>
+  <li>Account with Apigee and understanding how to setup Edge Microgateway proxies. Please see <a href="https://docs.apigee.com/api-platform/microgateway/2.5.x/overview-edge-microgateway">Edge Microgateway Documentation</a> for more information</li>
+  <li>Node.js 4.x or later. For more info visit <a href="https://github.com/nodejs/Release">Nodejs Github Release Document</a></li>
+  <li>Basic understanding and experience of Docker</li>
+  <li>If you choose to run it in a Kubernetes environment, you will need to have some experience with <a href="https://kubernetes.io/">Kubernetes</a></li>
+</ol>
+
+<h2 id="section-1---configuration-preperation">Section 1 - Configuration Preperation</h2>
+<p>This section is to set up two Edge Microgateway aware proxies to demonstrate how we can deploy seperate microgateway containers to be used for seperate proxy endpoints by utilizing proxy filters.</p>
+
+<ol>
+  <li>Create two Microgateway aware reverse proxies in your existing Apigee portal:
+    <ul>
+      <li>edgemicro_firstproxy
+        <ul>
+          <li>Proxy Name: edgemicro_firstproxy</li>
+          <li>Proxy Base Path: firstproxy</li>
+          <li>Existing API http://httpbin.org/</li>
+        </ul>
+      </li>
+      <li>edgemicro_secondproxy
+        <ul>
+          <li>Proxy Name: edgemicro_secondproxy</li>
+          <li>Proxy Base Path: secondproxy</li>
+          <li>Existing API http://httpbin.org/</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In this step, you will generate a key, secret and the {org}-{env}-config.yaml for later use. This section assumes you already have node.js and npm installed on your localhost or server.</p>
+
+    <p>Please open a terminal in your localhost/server and do the following:</p>
+
+    <ul>
+      <li>Install Edge microgateway</li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm install -g edgemicro
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Initialize Edge microgateway</li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> edgemicro init
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Configure Edge microgateway and save the key and secret for later use.</li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> edgemicro configure -o "your-orgname" -e "your-envname" -u "your-username"
+</code></pre></div>    </div>
+    <ul>
+      <li>
+        <p>If the configuration is successful, you will see a key, secret and token being displayed. The <strong>{org}-{env}-config.yaml</strong> file has also been generated in the  <strong>~/.edgemicro</strong> directory.</p>
+      </li>
+      <li>
+        <p>Save the key, secret and token in a text file of your choice for later use.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="section-2---build-docker-images">Section 2 - Build docker images</h2>
+<p>The steps in this section are to build Docker container images. To complete this section, you will need a Docker hub account(or equivalent).</p>
+
+<ol>
+  <li>In your localhost or server, change directory to .edgemicro. Run <code class="highlighter-rouge">cd ~/.edgemicro/</code></li>
+  <li>
+    <p>Clone the project
+<code class="highlighter-rouge">git clone https://github.com/zcai2672/apigee-edgemicro-docker.git</code></p>
+  </li>
+  <li>
+    <p>Copy the {org}-{env}-config.yaml generated in the <strong>Section 1 - Configuration Preperation</strong> to the ‘apigee-edgemicro-docker’ folder created from the previous step.</p>
+  </li>
+  <li>
+    <p>Switch directory
+<code class="highlighter-rouge">cd apigee-edgemicro-docker</code></p>
+  </li>
+  <li>Add <code class="highlighter-rouge">proxyPattern: edgemicro_firstproxy*</code> to the edge_config member in the {org}-{env}-config.yaml
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> edge_config:
+   proxyPattern: edgemicro_firstproxy*
+   .
+   .
+   . omitted for brevity
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Build the docker image using following command:
+<code class="highlighter-rouge">docker build --build-arg ORG="your-orgname" --build-arg ENV="your-env" -t microgateway:first .</code></p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">docker images</code> to get the IMAGE_ID of the container image created in previous step.</p>
+  </li>
+  <li>
+    <p>Tag the image <code class="highlighter-rouge">docker tag &lt;image_id&gt; &lt;docker_hub_id&gt;/microgateway:first</code></p>
+  </li>
+  <li>
+    <p>Login to docker hub, run <code class="highlighter-rouge">docker login</code></p>
+  </li>
+  <li>
+    <p>Push the image to a container register such as Docker Hub (you can also use Google Container Register)
+<code class="highlighter-rouge">docker push &lt;docker_hub_id&gt;/microgateway:first</code></p>
+  </li>
+  <li>Now edit the {org}-{env}-config.yaml file again by changing the proxyPattern configuration to ‘edgemicro_secondproxy*’ <code class="highlighter-rouge">proxyPattern: edgemicro_secondproxy*</code> in the edge_config member in the {org}-{env}-config.yaml
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edge_config:
+  proxyPattern: edgemicro_secondproxy*
+  .
+  .
+  . omitted for brevity
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Build the docker image using following command:
+<code class="highlighter-rouge">docker build --build-arg ORG="your-orgname" --build-arg ENV="your-env" -t microgateway:second .</code></p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">docker images</code> to get the IMAGE_ID of image created in previous step.</p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">docker tag &lt;image_id&gt; &lt;docker_hub_id&gt;/microgateway:second</code></p>
+  </li>
+  <li>push the images to a container register such as Docker Hub or Google Container register
+<code class="highlighter-rouge">docker push &lt;docker_hub_id&gt;/microgateway:second</code></li>
+</ol>
+
+<h2 id="section-3---deployments">Section 3 - Deployments</h2>
+
+<p>You have two deployment options in this section, You can choose to deploy docker only in option 1 or you can deploy your images in a Kubernetes environment.</p>
+
+<h3 id="option-1---docker-only-deployment">Option 1 - Docker only deployment</h3>
+
+<p>For this option, you will be deploying two Docker container images, microgateway:first in port 8000 and microgateway:second in port 8001</p>
+
+<p>You can run the the microgateway image in same local environment that you have previously set up.</p>
+
+<ol>
+  <li>To start running  microgateway:first image
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 8000:8000 -e EDGEMICRO_ORG="your-orgname" -e EDGEMICRO_ENV="your-env" -e EDGEMICRO_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -e  EDGEMICRO_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -P -it microgateway:first
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To test, run <code class="highlighter-rouge">curl http://localhost:8000/firstproxy/anything</code></p>
+
+    <p>If deployment is successful, you should see something like this</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {"error":"missing_authorization","error_description":"Missing Authorization header"}
+</code></pre></div>    </div>
+    <p>To test if the filter is working, run <code class="highlighter-rouge">curl http://localhost:8000/secondproxy/anything</code> 
+ You should get the following if the proxy filter that you have configured works.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {"message":"no match found for /secondproxy/anything","status":404}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Deploy the second gateway microgateway:second image
+<code class="highlighter-rouge">docker run -d -p 8001:8000 -e EDGEMICRO_ORG="your-orgname" -e EDGEMICRO_ENV="your-env" -e EDGEMICRO_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -e  EDGEMICRO_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -P -it microgateway:second</code></p>
+  </li>
+  <li>
+    <p>To test, run <code class="highlighter-rouge">curl http://localhost:8001/secondproxy/anything</code></p>
+
+    <p>you should see something like this</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {"error":"missing_authorization","error_description":"Missing Authorization header"}
+</code></pre></div>    </div>
+    <p>Then run <code class="highlighter-rouge">curl http://localhost:8001/firstproxy/anything</code> to test the filter you have configured for this proxy. 
+   You should get the following if your filter works.
+   <code class="highlighter-rouge">{"message":"no match found for /firstproxy/anything","status":404}</code></p>
+  </li>
+</ol>
+
+<h3 id="option-2---docker-in-gcp-kubernetes-deployment">Option 2 - Docker in GCP Kubernetes deployment</h3>
+
+<p>You will need to a Google Cloud platform Account for this option. A local Kubernetes installation should also work but has not been tested at this stage.</p>
+
+<ol>
+  <li>
+    <p>Login to your GCP console, create your Kubernetes cluster under Kubernetes Engine section.</p>
+  </li>
+  <li>Run the following command to clone the Microgate way project
+<code class="highlighter-rouge">git clone https://github.com/zcai2672/apigee-edgemicro-docker.git</code></li>
+  <li>
+    <p>Switch directory
+<code class="highlighter-rouge">cd apigee-edgemicro-docker</code></p>
+  </li>
+  <li>Create Kubernetes secret
+    <ul>
+      <li>Use the key and secrets generated in step 2 of <strong>Section 1 - Configuration Preperation</strong> and  it to to base64
+Convert each of these values into base64. THis will help store those credentails into Kubernetes secrets.
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo -n "org" | base64
+echo -n "env" | base64
+echo -n "key" | base64
+echo -n "secret" | base64
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Use the results in the configuration in the mgw-secret.yaml</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: v1
+kind: Secret
+metadata:
+  name: mgwsecret
+type: Opaque
+data:
+  mgorg: xxxxxx
+  mgenv: xxxxxx
+  mgkey: xxxxxx
+  mgsecret: xxxxxx
+</code></pre></div>        </div>
+        <p>Run this file in your kubernetes environment to create the secret configuration</p>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kubectl create -f  mgw-secret.yaml
+</code></pre></div>        </div>
+        <p>For more info on Kubernetes secrets, please see <a href="https://kubernetes.io/docs/concepts/configuration/secret/">Kubernetes Secret Doc</a></p>
+
+        <p>You can check if the secret creation by issuring the following command</p>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get secrets
+</code></pre></div>        </div>
+        <p>You will see something similar to this:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME           TYPE       DATA      AGE
+mgwsecret      Opaque     4         23h
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Create Kubernetes microgateway pods.</p>
+
+    <p>Open mgw-pod-first.yaml and mgw-pod-second.yaml. 
+Update the placeholder for the ‘image’ member to point to the correct docker container registry location (In Step 8) for file mgw-pod-first.yaml and mgw-pod-second.yaml files.</p>
+
+    <p>If you are using Docker hub, make sure you are logged in</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker login
+</code></pre></div>    </div>
+
+    <p>Run the script to create the pods</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f mgw-pod-first.yaml
+</code></pre></div>    </div>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f mgw-pod-second.yaml
+</code></pre></div>    </div>
+
+    <p>Check if the pods has been created</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
+</code></pre></div>    </div>
+    <p>You will see something like this:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                  READY     STATUS    RESTARTS   AGE
+edge-microgateway-first               1/2       Running   0          17h
+edge-microgateway-second              1/2       Running   0          17h
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create Kubernetes microgateway Service to expose the gateway</p>
+
+    <p>Make sure that your selector is configured to point to the pod labels member from the step above.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: v1
+kind: Service
+metadata:
+  name: edge-microgateway
+  labels:
+    app: edge-microgateway
+spec:
+  ports:
+  - port: 8000
+    name: http
+  selector:
+    app: edge-microgateway
+
+</code></pre></div>    </div>
+    <p>Check if service has been created</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get services 
+</code></pre></div>    </div>
+    <p>You should see something like this:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)          AGE
+edge-microgateway   LoadBalancer   xx.xx.xx.xx     xx.xx.xx.xx     8000:31827/TCP   17h
+kubernetes          ClusterIP      10.59.240.1     &lt;none&gt;          443/TCP          1d
+</code></pre></div>    </div>
+
+    <p>To test the service endpoint, please make sure you are using a terminal on a seperate server or your local machine. Use generated external ip obtained from the previous step and run:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -v http://&lt;EXTERNAL-IP&gt;:8000/firstproxy/anything -v
+</code></pre></div>    </div>
+    <p>If the deployment is successful you should be see something like this:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"error":"missing_authorization","error_description":"Missing Authorization header"}
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+  </div><a class="u-url" href="/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ivan&#39;s Development Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ivan&#39;s Development Blog</li><li><a class="u-email" href="mailto:ivan.z.cai@gmail.com">ivan.z.cai@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/ivanzcai"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ivanzcai</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

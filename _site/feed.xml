@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-11T17:36:02+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>Write an awesome description for your new site here! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-18T16:57:52+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>Write an awesome description for your new site here! You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Building your first Docker .Net core MVC image</title><link href="http://localhost:4000/backend/Create-MVC-docker-image" rel="alternate" type="text/html" title="Building your first Docker .Net core MVC image" /><published>2018-12-17T00:00:00+11:00</published><updated>2018-12-17T00:00:00+11:00</updated><id>http://localhost:4000/backend/Create-MVC-docker-image</id><content type="html" xml:base="http://localhost:4000/backend/Create-MVC-docker-image">&lt;p&gt;Once you have some idea of what Docker is and how you can download docker images and learnt how to &lt;a href=&quot;Running-Docker-and-DotNet&quot;&gt;run .NET Core on docker&lt;/a&gt; on your own machine, you are ready to learn how we can create and customise docker image for deployment.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-and-use-a-docker-file&quot;&gt;Create and use a docker file&lt;/h3&gt;
+
+&lt;p&gt;To enable your application to use Docker, first you will need to create a &lt;strong&gt;Dockerfile&lt;/strong&gt; in your .NET Core project. If you want to learn more about Dockerfile configuration. please see docker &lt;a href=&quot;https://docs.docker.com/reference/&quot;&gt;reference documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The way it works is that when you enter &lt;strong&gt;docker build&lt;/strong&gt; command, docker builds an image from from a &lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM microsoft/dotnet:sdk AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY --from=microsoft/dotnet:sdk /app/out .
+ENTRYPOINT [&quot;dotnet&quot;, &quot;aspnetapp.dll&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Once you have some idea of what Docker is and how you can download docker images and learnt how to run .NET Core on docker on your own machine, you are ready to learn how we can create and customise docker image for deployment.</summary></entry><entry><title type="html">Running .Net core MVC on docker</title><link href="http://localhost:4000/backend/Running-Docker-and-DotNet" rel="alternate" type="text/html" title="Running .Net core MVC on docker" /><published>2018-12-14T00:00:00+11:00</published><updated>2018-12-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/Running-Docker-and-DotNet</id><content type="html" xml:base="http://localhost:4000/backend/Running-Docker-and-DotNet">&lt;p&gt;This article will show you how to run a simple .Net core in a Docker container.&lt;/p&gt;
+
+&lt;p&gt;the advantages of running your .NET Core MVC App on a containerised environment are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Flexible to deploy&lt;/li&gt;
+  &lt;li&gt;Better scalability with the right architecture&lt;/li&gt;
+  &lt;li&gt;Enhance resilience with the right architecture&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Some experience of running Docker. If not please see &lt;a href=&quot;https://www.docker.com/get-started&quot;&gt;Get started with Docker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Some experience with .Net Web API development. If not please see &lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&amp;amp;tabs=visual-studio&quot;&gt;Create a web API with ASP.NET Core MVC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Some context of what Microservices is all about and what role Docker can play in the grand scheme of things. Please checkout &lt;a href=&quot;https://www.youtube.com/watch?v=3cvCtovrKWg&quot;&gt;Docker Demo and Microservices Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;where-to-get-the-right-docker-images&quot;&gt;Where to get the right docker images&lt;/h3&gt;
+
+&lt;p&gt;Microsoft has created official Docker images and made publicly available on Docker Hub. 
+There are multiple responsitories that you can download and each repository has multiple images with various versions of .NET and OS.
+&lt;a href=&quot;https://hub.docker.com/r/microsoft/dotnet/&quot;&gt;Microsoft Docker Hub Repositories&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-get-started&quot;&gt;Lets Get Started&lt;/h3&gt;
+
+&lt;h4 id=&quot;install-docker&quot;&gt;Install Docker&lt;/h4&gt;
+&lt;p&gt;First you will need to install docker Desktop on your development machine&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hub.docker.com/editions/community/docker-ce-desktop-windows&quot;&gt;Windows 10 Docker Destop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hub.docker.com/editions/community/docker-ce-desktop-mac&quot;&gt;Mac Docker Destop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are using Windows 8 or below, you will need to use docker tool box, it can be a little bit tricky so take your time and follow the instructions carefully.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/toolbox/toolbox_install_windows/&quot;&gt;Windows 8 - Docker Toolbox&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;running-a-net-console-app-in-docker&quot;&gt;Running a .NET Console App in Docker&lt;/h4&gt;
+&lt;p&gt;To create a simple console app in a Linux container, open your docker console and run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Console&quot;&gt;docker run --rm microsoft/dotnet-samples
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If it ran successfully, The console will return  &lt;strong&gt;Hello from .NET Core!&lt;/strong&gt; and an image of a cartoon robot.&lt;/p&gt;
+
+&lt;h4 id=&quot;running-a-net-mvc-web-app-in-docker&quot;&gt;Running a .NET MVC Web App in Docker&lt;/h4&gt;
+&lt;p&gt;Type the following command to run a sample web application:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -it --rm -p 8000:80 --name aspnetcore_sample microsoft/dotnet-samples:aspnetapp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To test it, in windows 10 or Mac goto &lt;strong&gt;http://localhost:8000&lt;/strong&gt;
+If you are using Docker Toolbox in Windows 8 goto &lt;strong&gt;http://192.168.99.100:8000/&lt;/strong&gt;
+Now you should see the sample .NET MVC web app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/docker-dotnet-mvc.PNG&quot; alt=&quot;.NET mvc app docker&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it! you have successfully ran your first .NET MVC app on your local Docker container!&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This article will show you how to run a simple .Net core in a Docker container.</summary></entry><entry><title type="html">Introduction to .NET Core Deployment Options</title><link href="http://localhost:4000/backend/Intro-Dotnet-Core-Deployment" rel="alternate" type="text/html" title="Introduction to .NET Core Deployment Options" /><published>2018-12-12T00:00:00+11:00</published><updated>2018-12-12T00:00:00+11:00</updated><id>http://localhost:4000/backend/Intro-Dotnet-Core-Deployment</id><content type="html" xml:base="http://localhost:4000/backend/Intro-Dotnet-Core-Deployment">&lt;p&gt;This post, I will give you an overview of .NET Core deployment options
+There are three types of .NET core application deployments, those are:&lt;/p&gt;
+
+&lt;h3 id=&quot;1-framework-dependent-deploymentfdd&quot;&gt;1. Framework-dependent deployment(FDD)&lt;/h3&gt;
+
+&lt;p&gt;This type of deployment relies on the existing version of .NET Core on the system. The application only contains the application code and any third-party packages outside of the .NET Core libraries. It should have  &lt;em&gt;.dll&lt;/em&gt; files that can be run from command line  console dotnet myapp.dll&lt;/p&gt;
+
+&lt;h4 id=&quot;pros&quot;&gt;Pros&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No need to define target operation system&lt;/li&gt;
+  &lt;li&gt;Small deployment package size&lt;/li&gt;
+  &lt;li&gt;Runs latest patched version of .NET Core runtime(unless specified)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cons&quot;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;No control of .NET Core libraries version&lt;/li&gt;
+  &lt;li&gt;Risk of mismatch of .NET Core libraries and runtimes, it might change the behaviour of the application or not run at all.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;usecase&quot;&gt;Usecase&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;This deployment is useful for deploying to stable dedicated environment where changes to .NET Core dependencies are well managed and documented.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-self-contained-deploymentscd&quot;&gt;2. Self-contained deployment(SCD):&lt;/h3&gt;
+&lt;p&gt;As the name have suggested, this deployment type contains all the components needed for the application to run, this includes the .NET Core libraries and runtime. It contains executable files with &lt;em&gt;.exe&lt;/em&gt; extensions.&lt;/p&gt;
+
+&lt;h4 id=&quot;pros-1&quot;&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Complete control of the .NET Core version and assured that the hosting system can run the .NET Core app since it’s provided in the deployment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cons-1&quot;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Large deployment package as all the .NET Core libraries are included.&lt;/li&gt;
+  &lt;li&gt;Larger memory foot print if multiple .NET Core applications are running in the same target system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;usecase-1&quot;&gt;Usecase&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;When you unsure of the target system can support your application. This deployment type will give you more control and certainty in your deployment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-framework-dependent-executablesfde&quot;&gt;3. Framework-dependent executables(FDE):&lt;/h3&gt;
+&lt;p&gt;This deployment type contains executables (&lt;em&gt;.exe&lt;/em&gt;) that depends on existing system wide .NET Core libraries and runtime to run.&lt;/p&gt;
+
+&lt;h4 id=&quot;pros-2&quot;&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Similar to FDD, you will have a small package size since .NET Core libraries and runtime are excluded.&lt;/li&gt;
+  &lt;li&gt;Smaller memory and disk space footprint in a multi .NET applications are running in the same environment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cons-2&quot;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Lack of control on the version of .NET Core Libraries and runtime.&lt;/li&gt;
+  &lt;li&gt;The app needs to be published for each platform.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;usecase-2&quot;&gt;Usecase&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;When you unsure of the target system can support your application. This deployment type will give you more control and certainty in your deployment.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post, I will give you an overview of .NET Core deployment options There are three types of .NET core application deployments, those are:</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
 
 &lt;p&gt;The code base is located in &lt;a href=&quot;https://github.com/ivanzcai/gulp-demo&quot;&gt;https://github.com/ivanzcai/gulp-demo&lt;/a&gt;&lt;/p&gt;
 
@@ -40,7 +180,9 @@ npm install --save-dev gulp-uglify
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;If this works, you will see files generated in the &lt;strong&gt;deploy&lt;/strong&gt; folder&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
 
 &lt;p&gt;Those tasks included:&lt;/p&gt;
 
@@ -80,4 +222,350 @@ npm install --save-dev gulp-uglify
     &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Docker Quick Reference</title><link href="http://localhost:4000/backend/Docker-Quick-Reference" rel="alternate" type="text/html" title="Docker Quick Reference" /><published>2018-10-12T00:00:00+11:00</published><updated>2018-10-12T00:00:00+11:00</updated><id>http://localhost:4000/backend/Docker-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Docker-Quick-Reference">&lt;p&gt;This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.&lt;/p&gt;
+
+&lt;h2 id=&quot;useful-docker-command-lines&quot;&gt;useful docker command lines&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker help&lt;/code&gt; Lists all the command options and their usage&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; Get all of the images in your local machine&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build .&lt;/code&gt; Build an image from the current path using the default Dockerfile
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ARG1=&quot;value1&quot;  --tag &amp;lt;image_name&amp;gt;:&amp;lt;tag&amp;gt; &amp;lt;build_location&amp;gt;&lt;/code&gt;     Build visit[docker build reference]  (https://docs.docker.com/engine/reference/commandline/build/) for more detail.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repositoryname&amp;gt;.git#branch --tag &amp;lt;imageName&amp;gt;:&amp;lt;tagName&amp;gt;&lt;/code&gt; Build docker image from git hub.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 49160:8080 -d &amp;lt;your username&amp;gt;/&amp;lt;your app&amp;gt;&lt;/code&gt;  By default, if docker cannot locate your application image, it will do a search in https://dockerhub.com for the application image.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker rmi &amp;lt;reponsitory_name&amp;gt;:&amp;lt;tag&amp;gt;&lt;/code&gt; remove image with specific repository name and tag&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to see all the running docker containers&lt;/p&gt;
+
+&lt;h2 id=&quot;useful-links&quot;&gt;Useful links&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/&quot;&gt;Dockerizing a Note.js web app&lt;/a&gt;
+&lt;a href=&quot;https://runnable.com/docker/install-docker-on-linux&quot;&gt;Install Docker In Linux&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.</summary></entry><entry><title type="html">Deploy Docker Node.js in Redhat Linux</title><link href="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat" rel="alternate" type="text/html" title="Deploy Docker Node.js in Redhat Linux" /><published>2018-06-21T00:00:00+10:00</published><updated>2018-06-21T00:00:00+10:00</updated><id>http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat</id><content type="html" xml:base="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat">&lt;p&gt;You can use your own dockerised Node.js in your Github repository or use the my repository for this &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;Dockerize Node.js repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This doc assumes that you already have a server running Redhat and that the ports are open to the internet for inbound and outbound.&lt;/p&gt;
+
+&lt;h4 id=&quot;install-docker-with-yum&quot;&gt;Install Docker with Yum&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First you need to login with system &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges&lt;/li&gt;
+  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo su&lt;/code&gt; to change to system user&lt;/li&gt;
+  &lt;li&gt;Update your system yum package manager &lt;code class=&quot;highlighter-rouge&quot;&gt;yum update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;vi  /etc/yum.repos.d/docker.repo&lt;/code&gt; to open vi editor&lt;/li&gt;
+  &lt;li&gt;Paste the following lines to the file
+ [dockerrepo]
+ name=Docker Repository
+ baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+ enabled=1
+ gpgcheck=1
+ gpgkey=https://yum.dockerproject.org/gpg&lt;/li&gt;
+  &lt;li&gt;Install Docker by run:
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;yum install docker-engine -y&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Start Docker, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;service docker start&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;To check if your Docker process has started, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker run hello-world&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;run-nodejs-the&quot;&gt;Run Node.Js the&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;You can build your dockerised Node.js or use &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;this demo repository&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Run: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build https://github.com/ivanzcai/DockerizeNodeJsApp.git#master -t ivancai/dockerizenodejsapp:latest&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Check if the image has been created by enter: ```docker images`` you should see the repository &lt;strong&gt;ivancai/dockerizenodejsapp&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Run the image on your docker container:&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 8081:8080 -d ivancai/dockerizenodejsapp&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Check if the demo application has been successfully deployed, goto your favourite browser, goto &lt;strong&gt;http://yourAddressOrPublicId.com:8081&lt;/strong&gt; you should see &lt;em&gt;hello World&lt;/em&gt; displayed.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">You can use your own dockerised Node.js in your Github repository or use the my repository for this Dockerize Node.js repository</summary></entry><entry><title type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes</title><link href="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" rel="alternate" type="text/html" title="Apigee Edge Microgateway on Docker &amp; Kubernetes" /><published>2018-05-01T00:00:00+10:00</published><updated>2018-05-01T00:00:00+10:00</updated><id>http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes</id><content type="html" xml:base="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes">&lt;h1 id=&quot;apigee-edge-microgateway-on-docker--kubernetes&quot;&gt;Apigee Edge Microgateway on Docker &amp;amp; Kubernetes&lt;/h1&gt;
+&lt;p&gt;This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Docker installation. For more info please visit &lt;a href=&quot;https://www.docker.com/get-docker&quot;&gt;Docker home page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Account with Apigee and understanding how to setup Edge Microgateway proxies. Please see &lt;a href=&quot;https://docs.apigee.com/api-platform/microgateway/2.5.x/overview-edge-microgateway&quot;&gt;Edge Microgateway Documentation&lt;/a&gt; for more information&lt;/li&gt;
+  &lt;li&gt;Node.js 4.x or later. For more info visit &lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;Nodejs Github Release Document&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Basic understanding and experience of Docker&lt;/li&gt;
+  &lt;li&gt;If you choose to run it in a Kubernetes environment, you will need to have some experience with &lt;a href=&quot;https://kubernetes.io/&quot;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1---configuration-preperation&quot;&gt;Section 1 - Configuration Preperation&lt;/h2&gt;
+&lt;p&gt;This section is to set up two Edge Microgateway aware proxies to demonstrate how we can deploy seperate microgateway containers to be used for seperate proxy endpoints by utilizing proxy filters.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create two Microgateway aware reverse proxies in your existing Apigee portal:
+    &lt;ul&gt;
+      &lt;li&gt;edgemicro_firstproxy
+        &lt;ul&gt;
+          &lt;li&gt;Proxy Name: edgemicro_firstproxy&lt;/li&gt;
+          &lt;li&gt;Proxy Base Path: firstproxy&lt;/li&gt;
+          &lt;li&gt;Existing API http://httpbin.org/&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;edgemicro_secondproxy
+        &lt;ul&gt;
+          &lt;li&gt;Proxy Name: edgemicro_secondproxy&lt;/li&gt;
+          &lt;li&gt;Proxy Base Path: secondproxy&lt;/li&gt;
+          &lt;li&gt;Existing API http://httpbin.org/&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In this step, you will generate a key, secret and the {org}-{env}-config.yaml for later use. This section assumes you already have node.js and npm installed on your localhost or server.&lt;/p&gt;
+
+    &lt;p&gt;Please open a terminal in your localhost/server and do the following:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Install Edge microgateway&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm install -g edgemicro
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Initialize Edge microgateway&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edgemicro init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Configure Edge microgateway and save the key and secret for later use.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edgemicro configure -o &quot;your-orgname&quot; -e &quot;your-envname&quot; -u &quot;your-username&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;If the configuration is successful, you will see a key, secret and token being displayed. The &lt;strong&gt;{org}-{env}-config.yaml&lt;/strong&gt; file has also been generated in the  &lt;strong&gt;~/.edgemicro&lt;/strong&gt; directory.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Save the key, secret and token in a text file of your choice for later use.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-2---build-docker-images&quot;&gt;Section 2 - Build docker images&lt;/h2&gt;
+&lt;p&gt;The steps in this section are to build Docker container images. To complete this section, you will need a Docker hub account(or equivalent).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In your localhost or server, change directory to .edgemicro. Run &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/.edgemicro/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Clone the project
+&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/zcai2672/apigee-edgemicro-docker.git&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy the {org}-{env}-config.yaml generated in the &lt;strong&gt;Section 1 - Configuration Preperation&lt;/strong&gt; to the ‘apigee-edgemicro-docker’ folder created from the previous step.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch directory
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cd apigee-edgemicro-docker&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;proxyPattern: edgemicro_firstproxy*&lt;/code&gt; to the edge_config member in the {org}-{env}-config.yaml
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edge_config:
+   proxyPattern: edgemicro_firstproxy*
+   .
+   .
+   . omitted for brevity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build the docker image using following command:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ORG=&quot;your-orgname&quot; --build-arg ENV=&quot;your-env&quot; -t microgateway:first .&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; to get the IMAGE_ID of the container image created in previous step.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tag the image &lt;code class=&quot;highlighter-rouge&quot;&gt;docker tag &amp;lt;image_id&amp;gt; &amp;lt;docker_hub_id&amp;gt;/microgateway:first&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login to docker hub, run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker login&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Push the image to a container register such as Docker Hub (you can also use Google Container Register)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;docker_hub_id&amp;gt;/microgateway:first&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now edit the {org}-{env}-config.yaml file again by changing the proxyPattern configuration to ‘edgemicro_secondproxy*’ &lt;code class=&quot;highlighter-rouge&quot;&gt;proxyPattern: edgemicro_secondproxy*&lt;/code&gt; in the edge_config member in the {org}-{env}-config.yaml
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;edge_config:
+  proxyPattern: edgemicro_secondproxy*
+  .
+  .
+  . omitted for brevity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build the docker image using following command:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ORG=&quot;your-orgname&quot; --build-arg ENV=&quot;your-env&quot; -t microgateway:second .&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; to get the IMAGE_ID of image created in previous step.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker tag &amp;lt;image_id&amp;gt; &amp;lt;docker_hub_id&amp;gt;/microgateway:second&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;push the images to a container register such as Docker Hub or Google Container register
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;docker_hub_id&amp;gt;/microgateway:second&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-3---deployments&quot;&gt;Section 3 - Deployments&lt;/h2&gt;
+
+&lt;p&gt;You have two deployment options in this section, You can choose to deploy docker only in option 1 or you can deploy your images in a Kubernetes environment.&lt;/p&gt;
+
+&lt;h3 id=&quot;option-1---docker-only-deployment&quot;&gt;Option 1 - Docker only deployment&lt;/h3&gt;
+
+&lt;p&gt;For this option, you will be deploying two Docker container images, microgateway:first in port 8000 and microgateway:second in port 8001&lt;/p&gt;
+
+&lt;p&gt;You can run the the microgateway image in same local environment that you have previously set up.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;To start running  microgateway:first image
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 8000:8000 -e EDGEMICRO_ORG=&quot;your-orgname&quot; -e EDGEMICRO_ENV=&quot;your-env&quot; -e EDGEMICRO_KEY=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -e  EDGEMICRO_SECRET=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -P -it microgateway:first
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To test, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8000/firstproxy/anything&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;If deployment is successful, you should see something like this&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;To test if the filter is working, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8000/secondproxy/anything&lt;/code&gt; 
+ You should get the following if the proxy filter that you have configured works.&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;message&quot;:&quot;no match found for /secondproxy/anything&quot;,&quot;status&quot;:404}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deploy the second gateway microgateway:second image
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 8001:8000 -e EDGEMICRO_ORG=&quot;your-orgname&quot; -e EDGEMICRO_ENV=&quot;your-env&quot; -e EDGEMICRO_KEY=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -e  EDGEMICRO_SECRET=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -P -it microgateway:second&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To test, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8001/secondproxy/anything&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;you should see something like this&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Then run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8001/firstproxy/anything&lt;/code&gt; to test the filter you have configured for this proxy. 
+   You should get the following if your filter works.
+   &lt;code class=&quot;highlighter-rouge&quot;&gt;{&quot;message&quot;:&quot;no match found for /firstproxy/anything&quot;,&quot;status&quot;:404}&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;option-2---docker-in-gcp-kubernetes-deployment&quot;&gt;Option 2 - Docker in GCP Kubernetes deployment&lt;/h3&gt;
+
+&lt;p&gt;You will need to a Google Cloud platform Account for this option. A local Kubernetes installation should also work but has not been tested at this stage.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Login to your GCP console, create your Kubernetes cluster under Kubernetes Engine section.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the following command to clone the Microgate way project
+&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/zcai2672/apigee-edgemicro-docker.git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch directory
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cd apigee-edgemicro-docker&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create Kubernetes secret
+    &lt;ul&gt;
+      &lt;li&gt;Use the key and secrets generated in step 2 of &lt;strong&gt;Section 1 - Configuration Preperation&lt;/strong&gt; and  it to to base64
+Convert each of these values into base64. THis will help store those credentails into Kubernetes secrets.
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo -n &quot;org&quot; | base64
+echo -n &quot;env&quot; | base64
+echo -n &quot;key&quot; | base64
+echo -n &quot;secret&quot; | base64
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Use the results in the configuration in the mgw-secret.yaml&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apiVersion: v1
+kind: Secret
+metadata:
+  name: mgwsecret
+type: Opaque
+data:
+  mgorg: xxxxxx
+  mgenv: xxxxxx
+  mgkey: xxxxxx
+  mgsecret: xxxxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;Run this file in your kubernetes environment to create the secret configuration&lt;/p&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; kubectl create -f  mgw-secret.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;For more info on Kubernetes secrets, please see &lt;a href=&quot;https://kubernetes.io/docs/concepts/configuration/secret/&quot;&gt;Kubernetes Secret Doc&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;You can check if the secret creation by issuring the following command&lt;/p&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get secrets
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;You will see something similar to this:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME           TYPE       DATA      AGE
+mgwsecret      Opaque     4         23h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create Kubernetes microgateway pods.&lt;/p&gt;
+
+    &lt;p&gt;Open mgw-pod-first.yaml and mgw-pod-second.yaml. 
+Update the placeholder for the ‘image’ member to point to the correct docker container registry location (In Step 8) for file mgw-pod-first.yaml and mgw-pod-second.yaml files.&lt;/p&gt;
+
+    &lt;p&gt;If you are using Docker hub, make sure you are logged in&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker login
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Run the script to create the pods&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl create -f mgw-pod-first.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl create -f mgw-pod-second.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Check if the pods has been created&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get pods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You will see something like this:&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME                                  READY     STATUS    RESTARTS   AGE
+edge-microgateway-first               1/2       Running   0          17h
+edge-microgateway-second              1/2       Running   0          17h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create Kubernetes microgateway Service to expose the gateway&lt;/p&gt;
+
+    &lt;p&gt;Make sure that your selector is configured to point to the pod labels member from the step above.&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apiVersion: v1
+kind: Service
+metadata:
+  name: edge-microgateway
+  labels:
+    app: edge-microgateway
+spec:
+  ports:
+  - port: 8000
+    name: http
+  selector:
+    app: edge-microgateway
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Check if service has been created&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get services 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You should see something like this:&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME                TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)          AGE
+edge-microgateway   LoadBalancer   xx.xx.xx.xx     xx.xx.xx.xx     8000:31827/TCP   17h
+kubernetes          ClusterIP      10.59.240.1     &amp;lt;none&amp;gt;          443/TCP          1d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;To test the service endpoint, please make sure you are using a terminal on a seperate server or your local machine. Use generated external ip obtained from the previous step and run:&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -v http://&amp;lt;EXTERNAL-IP&amp;gt;:8000/firstproxy/anything -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;If the deployment is successful you should be see something like this:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.</summary></entry><entry><title type="html">Node.js Quick Reference</title><link href="http://localhost:4000/backend/Nodejs-Quick-Reference" rel="alternate" type="text/html" title="Node.js Quick Reference" /><published>2018-01-03T00:00:00+11:00</published><updated>2018-01-03T00:00:00+11:00</updated><id>http://localhost:4000/backend/Nodejs-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Nodejs-Quick-Reference">&lt;h3 id=&quot;useful-links&quot;&gt;Useful links&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/github/gitignore/blob/master/Node.gitignore&quot;&gt;node.js .gitignore&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Useful links</summary></entry></feed>

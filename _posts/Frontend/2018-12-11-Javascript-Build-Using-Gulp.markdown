@@ -53,4 +53,9 @@ gulp
 ```
 If this works, you will see files generated in the **deploy** folder
 
+For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in [this github repository] [bundleassets]
+
+[bundleassets]: https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md
+
+
 [thisgit]:   https://github.com/ivanzcai/gulp-demo
