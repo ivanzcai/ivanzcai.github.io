@@ -36,9 +36,10 @@ I am also keeping a keen eye on AI and big data, although I am still a novice wh
 * 2016 - now: IT Consultant at ASG, Core services providing Application design and development services to clients. 
 
 ### Something personal
-I am married with 2 cute little kids. My youngest is Kayla, she is 1 and half and she is very tricky and absolutely gorgeous. My oldest is Jayden, he is a lefty, very creative an sensitive type just like daddy people said. My wife is a kind, loving and strong woman who I can alway trust and depended on.
+I am married with 2 cute little kids. My youngest is Kayla, she is 1 and half and she is very tricky and absolutely gorgeous. My oldest is Jayden, he is a lefty and very creative;  "just like daddy" people said. My wife is Linda. She is a kind, loving and strong woman who I can alway trust and depended on.
 
 
 ### My other passions
-I am a keen traveller and photographer. I preferred to do both at the same time. 
+I am a keen traveller and photographer. I preferred to do both at the same time.   
+I love my good coffee.   
 Going to gym is not strictly my passion, but keeping fit and healthy is. 
