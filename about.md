@@ -4,13 +4,12 @@ title: All About Me!
 permalink: /aboutme/
 ---
 
-
 ### Industry Experience
-I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.    
-I've worked in a number of different industries thoughout my career, those included defence, finanacial/superannuation, human resources, media, state and federal government agencies. I also had my fair share of entrepreneurship though the years. 
+I have 12 years of industry experience ranging from Linux and Oracle database administration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.    
+I've worked in several different industries throughout my career, those included defence, financial/superannuation, human resources, media, state and federal government agencies. I also had my fair share of entrepreneurship through the years. 
 
 ### Current Direction
-I have a keen interest in developing my expertise in various cloud solutions, I am currently study towards a Microsoft MCSD certificate specialised in **Architecting Microsoft Azure Solutions**  I am also a big fan of containerisation and microservices architecture. You will see my various posts on how to implement and deploy Dockerised .NET and Node.js on the local machine and in cloud such as Azure and AWS.   
+I have a keen interest in developing my expertise in various cloud solutions, I am currently study towards a Microsoft MCSD certificate specialised in **Architecting Microsoft Azure Solutions**.  I am also a big fan of containerisation and microservices architecture. You will see my various posts on how to implement and deploy Dockerised .NET and Node.js on the local machine and in cloud such as Azure and AWS.   
 I am also keeping a keen eye on AI and big data, although I am still a novice when it comes to the implementation side of things. 
 
 ### Study and Career history
@@ -23,7 +22,7 @@ I am also keeping a keen eye on AI and big data, although I am still a novice wh
 
 * 2005: Opened my first ecommerce store www.beautyproductsexpress.com.au(sold and no longer running).   
 
-* 2006 - 2009: An Oracle and Linux system adminstrator at The Department of Human Services(Formerly Centrelink).  
+* 2006 - 2009: An Oracle and Linux system administrator at The Department of Human Services(Formerly Centrelink).  
 
 * 2009 - 2012: Working as Application/Web Developer at HRX (acquired by PeopleScout) Working on Recruitment Process Outsourcing(RPO) application solutions.  
 
@@ -36,10 +35,11 @@ I am also keeping a keen eye on AI and big data, although I am still a novice wh
 * 2016 - now: IT Consultant at ASG, Core services providing Application design and development services to clients. 
 
 ### Something personal
-I am married with 2 cute little kids. My youngest is Kayla, she is 1 and half and she is very tricky and absolutely gorgeous. My oldest is Jayden, he is a lefty and very creative;  "just like daddy" people said. My wife is Linda. She is a kind, loving and strong woman who I can alway trust and depended on.
-
+I am married with 2 cute little kids. My youngest is Kayla, she is 1 and half and she is very tricky and gorgeous. My oldest is Jayden, he is a lefty and very creative; “just like daddy" people said. My wife is Linda. She is a kind, loving and strong woman who I can always trust and depended on.
 
 ### My other passions
 I am a keen traveller and photographer. I preferred to do both at the same time.   
 I love my good coffee.   
-Going to gym is not strictly my passion, but keeping fit and healthy is. 
+Going to gym is not strictly my passion but keeping fit and healthy is. 
+
+
