@@ -11,4 +11,4 @@ Email: [ivan.z.cai@gmail.com](ivan.z.cai@gmail.com)
 ### Profile links
 
 Gitub:[https://github.com/ivanzcai](https://github.com/ivanzcai)  
-LinkedIn: [www.linkedin.com/in/ivan-z-cai](www.linkedin.com/in/ivan-z-cai)  
+LinkedIn: [https://www.linkedin.com/in/ivan-z-cai](www.linkedin.com/in/ivan-z-cai)  
