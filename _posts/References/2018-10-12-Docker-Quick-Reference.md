@@ -20,7 +20,11 @@ This quick reference is for me to keep track of useful Docker related commands a
 
 ```docker rmi <reponsitory_name>:<tag>``` remove image with specific repository name and tag  
 
-```docker ps``` to see all the running docker containers
+```docker ps``` to see all the running docker containers with docker process id
+
+```docker kill <processId>``` To kill a docker process
+
+```docker-machine ip ``` To identify the IP of your docker-machine when not running on 127.0.0.1 - localhost (e.g. when using Docker Toolbox)
 
 ## Useful links 
 

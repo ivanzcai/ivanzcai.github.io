@@ -53,31 +53,33 @@
 <h4 id="install-docker-with-yum">Install Docker with Yum</h4>
 
 <ol>
-  <li>First you need to login with system <code class="highlighter-rouge">sudo</code> privileges</li>
-  <li>Enter <code class="highlighter-rouge">sudo su</code> to change to system user</li>
+  <li>First you need to login to the host server with system <code class="highlighter-rouge">sudo</code> privileges</li>
+  <li>Enter <code class="highlighter-rouge">sudo su</code> to change to your privilege to a system user</li>
   <li>Update your system yum package manager <code class="highlighter-rouge">yum update</code></li>
-  <li>Enter <code class="highlighter-rouge">vi  /etc/yum.repos.d/docker.repo</code> to open vi editor</li>
-  <li>Paste the following lines to the file
- [dockerrepo]
- name=Docker Repository
- baseurl=https://yum.dockerproject.org/repo/main/centos/7/
- enabled=1
- gpgcheck=1
- gpgkey=https://yum.dockerproject.org/gpg</li>
+  <li>Enter <code class="highlighter-rouge">vi  /etc/yum.repos.d/docker.repo</code> to open a vi editor</li>
+  <li>Paste the following lines to the file:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+</code></pre></div>    </div>
+  </li>
   <li>Install Docker by run:
  <code class="highlighter-rouge">yum install docker-engine -y</code></li>
   <li>Start Docker, run: <code class="highlighter-rouge">service docker start</code></li>
   <li>To check if your Docker process has started, run: <code class="highlighter-rouge">sudo docker run hello-world</code></li>
 </ol>
 
-<h4 id="run-nodejs-the">Run Node.Js the</h4>
+<h4 id="run-your-nodejs-project">Run your Node.Js project</h4>
 
 <ol>
   <li>You can build your dockerised Node.js or use <a href="https://github.com/ivanzcai/DockerizeNodeJsApp.git">this demo repository</a>.</li>
   <li>Run: <code class="highlighter-rouge">docker build https://github.com/ivanzcai/DockerizeNodeJsApp.git#master -t ivancai/dockerizenodejsapp:latest</code></li>
-  <li>Check if the image has been created by enter: ```docker images`` you should see the repository <strong>ivancai/dockerizenodejsapp</strong></li>
+  <li>Check if the image has been created by enter: <code class="highlighter-rouge">docker images</code> you should see the repository <strong>ivancai/dockerizenodejsapp</strong></li>
   <li>Run the image on your docker container:<code class="highlighter-rouge">docker run -p 8081:8080 -d ivancai/dockerizenodejsapp</code></li>
-  <li>Check if the demo application has been successfully deployed, goto your favourite browser, goto <strong>http://yourAddressOrPublicId.com:8081</strong> you should see <em>hello World</em> displayed.</li>
+  <li>Check if the demo application has been successfully deployed, goto your favourite browser, goto <strong>http://yourAddressOrPublicIp.com:8081</strong> you should see <em>hello World</em> displayed.</li>
 </ol>
 
   </div><a class="u-url" href="/backend/Deploy-Docker-NodeJs-Redhat" hidden></a>

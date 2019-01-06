@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-19T15:45:43+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">Intro To Dotnet Microservices</title><link href="http://localhost:4000/2018/12/19/Intro-To-DotNet-Microservices.html" rel="alternate" type="text/html" title="Intro To Dotnet Microservices" /><published>2018-12-19T00:00:00+11:00</published><updated>2018-12-19T00:00:00+11:00</updated><id>http://localhost:4000/2018/12/19/Intro-To-DotNet-Microservices</id><content type="html" xml:base="http://localhost:4000/2018/12/19/Intro-To-DotNet-Microservices.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Building your first Docker .Net core MVC image</title><link href="http://localhost:4000/backend/Create-MVC-docker-image" rel="alternate" type="text/html" title="Building your first Docker .Net core MVC image" /><published>2018-12-17T00:00:00+11:00</published><updated>2018-12-17T00:00:00+11:00</updated><id>http://localhost:4000/backend/Create-MVC-docker-image</id><content type="html" xml:base="http://localhost:4000/backend/Create-MVC-docker-image">&lt;p&gt;Once you have some idea of what Docker is and how you can download docker images and learnt how to &lt;a href=&quot;Running-Docker-and-DotNet&quot;&gt;run .NET Core on docker&lt;/a&gt; on your own machine, you are ready to learn how we can create and customise docker image for deployment.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-20T15:10:40+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">Creating microservices using .NET Core and Docker</title><link href="http://localhost:4000/backend/Creating-DotNet-Microservices" rel="alternate" type="text/html" title="Creating microservices using .NET Core and Docker" /><published>2018-12-19T00:00:00+11:00</published><updated>2018-12-19T00:00:00+11:00</updated><id>http://localhost:4000/backend/Creating-DotNet-Microservices</id><content type="html" xml:base="http://localhost:4000/backend/Creating-DotNet-Microservices">&lt;p&gt;Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk or bugs in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all.  Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. 
+With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the who system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade or so with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it will make the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.&lt;/p&gt;
+
+&lt;h3 id=&quot;microservices-generally-to-have-the-following-characteristics&quot;&gt;Microservices generally to have the following characteristics:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It should be independent and easily testable in isolation.&lt;/li&gt;
+  &lt;li&gt;It should be loosely coupled to other components.&lt;/li&gt;
+  &lt;li&gt;horizontally scalable.&lt;/li&gt;
+  &lt;li&gt;It’s operation does not depend on the other microservices, meaning that if a related services goes down, the microservice does not go down with it.&lt;/li&gt;
+  &lt;li&gt;Each microservice should have clear definition of scope and responsibilities.&lt;/li&gt;
+  &lt;li&gt;Communicate over a common, stateless protocol (e.g. HTTP)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;net-core-as-a-microservices&quot;&gt;.NET Core as a microservices:&lt;/h3&gt;
+
+&lt;p&gt;.NET Core has been designed ground up by Microsoft to make it highly portable and flexible. It can be ran in a container in all the major operation systems such as Linux, Mac and the traditional Windows servers.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-dockerised-web-api&quot;&gt;Create a Dockerised Web API:&lt;/h3&gt;
+
+&lt;p&gt;Create a new project in VS2017 goto &lt;strong&gt;File &amp;gt; New &amp;gt; Project &amp;gt; ASP.NET Core Web Application&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter the &lt;strong&gt;Name&lt;/strong&gt;, &lt;strong&gt;Location&lt;/strong&gt; and &lt;strong&gt;Solution Name&lt;/strong&gt;. I named it &lt;strong&gt;DockerWebAPI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose &lt;strong&gt;.NET Core&lt;/strong&gt;, &lt;strong&gt;ASP.NET Core 2.1&lt;/strong&gt;,  C&lt;strong&gt;hoose API&lt;/strong&gt; and Tick &lt;strong&gt;Enable Docker Support&lt;/strong&gt;  Click &lt;strong&gt;Ok&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/docker-web-api.PNG&quot; alt=&quot;.NET docker web API &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the project has been created, you will see the &lt;strong&gt;DockerWebApi &amp;gt; Dockerfile&lt;/strong&gt; docker file.&lt;/p&gt;
+
+&lt;p&gt;If you are using Mac or Windows 10, you change run the application natively in docker mode
+&lt;img src=&quot;/assets/docker-web-api-run.PNG&quot; alt=&quot;.NET docker web API Run&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are using Windows 8 like me, you will need to install &lt;a href=&quot;https://docs.docker.com/toolbox/toolbox_install_windows/&quot;&gt;Docker Toolbox&lt;/a&gt;. Once installed you can use the Docker CLI tool called &lt;strong&gt;Docker Quickstart Terminal&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/docker-terminal.PNG&quot; alt=&quot;.NET docker terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Within the terminal change directory the root of your project.&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker build .&lt;/code&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk or bugs in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all. Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the who system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade or so with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it will make the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.</summary></entry><entry><title type="html">Building your first Docker .Net core MVC image</title><link href="http://localhost:4000/backend/Create-MVC-docker-image" rel="alternate" type="text/html" title="Building your first Docker .Net core MVC image" /><published>2018-12-17T00:00:00+11:00</published><updated>2018-12-17T00:00:00+11:00</updated><id>http://localhost:4000/backend/Create-MVC-docker-image</id><content type="html" xml:base="http://localhost:4000/backend/Create-MVC-docker-image">&lt;p&gt;Once you have some idea of what Docker is and how you can download docker images and learnt how to &lt;a href=&quot;Running-Docker-and-DotNet&quot;&gt;run .NET Core on docker&lt;/a&gt; on your own machine, you are ready to learn how we can create and customise docker image for deployment.&lt;/p&gt;
 
 &lt;h3 id=&quot;create-and-use-a-docker-file&quot;&gt;Create and use a docker file&lt;/h3&gt;
 
@@ -236,7 +274,11 @@ npm install --save-dev gulp-uglify
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker rmi &amp;lt;reponsitory_name&amp;gt;:&amp;lt;tag&amp;gt;&lt;/code&gt; remove image with specific repository name and tag&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to see all the running docker containers&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to see all the running docker containers with docker process id&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;processId&amp;gt;&lt;/code&gt; To kill a docker process&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ip&lt;/code&gt; To identify the IP of your docker-machine when not running on 127.0.0.1 - localhost (e.g. when using Docker Toolbox)&lt;/p&gt;
 
 &lt;h2 id=&quot;useful-links&quot;&gt;Useful links&lt;/h2&gt;
 
@@ -248,31 +290,33 @@ npm install --save-dev gulp-uglify
 &lt;h4 id=&quot;install-docker-with-yum&quot;&gt;Install Docker with Yum&lt;/h4&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;First you need to login with system &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges&lt;/li&gt;
-  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo su&lt;/code&gt; to change to system user&lt;/li&gt;
+  &lt;li&gt;First you need to login to the host server with system &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges&lt;/li&gt;
+  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo su&lt;/code&gt; to change to your privilege to a system user&lt;/li&gt;
   &lt;li&gt;Update your system yum package manager &lt;code class=&quot;highlighter-rouge&quot;&gt;yum update&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;vi  /etc/yum.repos.d/docker.repo&lt;/code&gt; to open vi editor&lt;/li&gt;
-  &lt;li&gt;Paste the following lines to the file
- [dockerrepo]
- name=Docker Repository
- baseurl=https://yum.dockerproject.org/repo/main/centos/7/
- enabled=1
- gpgcheck=1
- gpgkey=https://yum.dockerproject.org/gpg&lt;/li&gt;
+  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;vi  /etc/yum.repos.d/docker.repo&lt;/code&gt; to open a vi editor&lt;/li&gt;
+  &lt;li&gt;Paste the following lines to the file:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
   &lt;li&gt;Install Docker by run:
  &lt;code class=&quot;highlighter-rouge&quot;&gt;yum install docker-engine -y&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Start Docker, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;service docker start&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;To check if your Docker process has started, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker run hello-world&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;run-nodejs-the&quot;&gt;Run Node.Js the&lt;/h4&gt;
+&lt;h4 id=&quot;run-your-nodejs-project&quot;&gt;Run your Node.Js project&lt;/h4&gt;
 
 &lt;ol&gt;
   &lt;li&gt;You can build your dockerised Node.js or use &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;this demo repository&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Run: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build https://github.com/ivanzcai/DockerizeNodeJsApp.git#master -t ivancai/dockerizenodejsapp:latest&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Check if the image has been created by enter: ```docker images`` you should see the repository &lt;strong&gt;ivancai/dockerizenodejsapp&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Check if the image has been created by enter: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; you should see the repository &lt;strong&gt;ivancai/dockerizenodejsapp&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Run the image on your docker container:&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 8081:8080 -d ivancai/dockerizenodejsapp&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Check if the demo application has been successfully deployed, goto your favourite browser, goto &lt;strong&gt;http://yourAddressOrPublicId.com:8081&lt;/strong&gt; you should see &lt;em&gt;hello World&lt;/em&gt; displayed.&lt;/li&gt;
+  &lt;li&gt;Check if the demo application has been successfully deployed, goto your favourite browser, goto &lt;strong&gt;http://yourAddressOrPublicIp.com:8081&lt;/strong&gt; you should see &lt;em&gt;hello World&lt;/em&gt; displayed.&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">You can use your own dockerised Node.js in your Github repository or use the my repository for this Dockerize Node.js repository</summary></entry><entry><title type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes</title><link href="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" rel="alternate" type="text/html" title="Apigee Edge Microgateway on Docker &amp; Kubernetes" /><published>2018-05-01T00:00:00+10:00</published><updated>2018-05-01T00:00:00+10:00</updated><id>http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes</id><content type="html" xml:base="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes">&lt;h1 id=&quot;apigee-edge-microgateway-on-docker--kubernetes&quot;&gt;Apigee Edge Microgateway on Docker &amp;amp; Kubernetes&lt;/h1&gt;
 &lt;p&gt;This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.&lt;/p&gt;
 
