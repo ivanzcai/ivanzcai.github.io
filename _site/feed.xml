@@ -1,5 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-20T15:10:40+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">Creating microservices using .NET Core and Docker</title><link href="http://localhost:4000/backend/Creating-DotNet-Microservices" rel="alternate" type="text/html" title="Creating microservices using .NET Core and Docker" /><published>2018-12-19T00:00:00+11:00</published><updated>2018-12-19T00:00:00+11:00</updated><id>http://localhost:4000/backend/Creating-DotNet-Microservices</id><content type="html" xml:base="http://localhost:4000/backend/Creating-DotNet-Microservices">&lt;p&gt;Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk or bugs in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all.  Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. 
-With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the who system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade or so with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it will make the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-10T17:11:21+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">.Net SignalR Intro with Docker Demo</title><link href="http://localhost:4000/backend/Simple-SignalR-App" rel="alternate" type="text/html" title=".Net SignalR Intro with Docker Demo" /><published>2019-01-10T00:00:00+11:00</published><updated>2019-01-10T00:00:00+11:00</updated><id>http://localhost:4000/backend/Simple-SignalR-App</id><content type="html" xml:base="http://localhost:4000/backend/Simple-SignalR-App">&lt;p&gt;This purpose of this page is to give a quick summery of what SignalR is and why we should we use it.
+You will see how it works in the &lt;a href=&quot;#demo&quot;&gt;Docker SignalR Demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-it&quot;&gt;what is it?&lt;/h3&gt;
+
+&lt;p&gt;SignalR is a library used in ASP.Net or .Net Core to provide real-time web functionalities to applications.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-should-i-use-it&quot;&gt;Why should I use it?&lt;/h3&gt;
+&lt;p&gt;It uses &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&quot;&gt;WebSocket protocol&lt;/a&gt; when browser support is available and falls back to HTTP protocol if necessary. 
+The main advantage of using it is that you won’t have to worry about compatibility issues verses implementing WebSocket natively.&lt;/p&gt;
+
+&lt;h3 id=&quot;docker-signalr-demo&quot;&gt;&lt;a id=&quot;demo&quot;&gt;&lt;/a&gt;Docker SignalR Demo&lt;/h3&gt;
+
+&lt;p&gt;To see how it work Open &lt;a href=&quot;http://dockersignalrchat.australiaeast.azurecontainer.io/&quot;&gt;SignalR Chat demo&lt;/a&gt; in two separate browsers in the same or separate devices. Enter different name for each session and start sending messages. You will see the messages are being updated real time.&lt;/p&gt;
+
+&lt;p&gt;You can also run it on your local machine using the following command: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -t ivancai/dockersignalrchat:latest&lt;/code&gt; if you have docker installed locally.&lt;/p&gt;
+
+&lt;h3 id=&quot;github-repository&quot;&gt;Github Repository&lt;/h3&gt;
+&lt;p&gt;My source code for this project is at &lt;a href=&quot;https://github.com/ivanzcai/DockerSignalRChat.git&quot;&gt;https://github.com/ivanzcai/DockerSignalRChat.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-i-do-it&quot;&gt;How do I do it?&lt;/h3&gt;
+&lt;p&gt;Microsoft Doc has an excellent tutorial on how to implement a simple SignalR application so make sure you try it out.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-2.2&amp;amp;tabs=visual-studio&quot;&gt;Signal R with Javascript on .Net Core 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;My &lt;a href=&quot;http://TobeAdded.com/au&quot;&gt;SignalRChat demo&lt;/a&gt; is based on this tutorial, however I have added Docker support for portability and flexibility.&lt;/p&gt;
+
+&lt;h3 id=&quot;additional-info&quot;&gt;Additional Info&lt;/h3&gt;
+&lt;p&gt;For more information, please visit Microsoft’s official &lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr&quot;&gt;SignalR Documentation&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This purpose of this page is to give a quick summery of what SignalR is and why we should we use it. You will see how it works in the Docker SignalR Demo</summary></entry><entry><title type="html">Creating microservices using .NET Core and Docker</title><link href="http://localhost:4000/backend/Creating-DotNet-Microservices" rel="alternate" type="text/html" title="Creating microservices using .NET Core and Docker" /><published>2018-12-19T00:00:00+11:00</published><updated>2018-12-19T00:00:00+11:00</updated><id>http://localhost:4000/backend/Creating-DotNet-Microservices</id><content type="html" xml:base="http://localhost:4000/backend/Creating-DotNet-Microservices">&lt;p&gt;Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all.  Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. 
+With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the whole system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it makes the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.&lt;/p&gt;
 
 &lt;h3 id=&quot;microservices-generally-to-have-the-following-characteristics&quot;&gt;Microservices generally to have the following characteristics:&lt;/h3&gt;
 
@@ -10,33 +38,83 @@ With increasing expectation of faster bug fixes and feature update comes at a co
   &lt;li&gt;It’s operation does not depend on the other microservices, meaning that if a related services goes down, the microservice does not go down with it.&lt;/li&gt;
   &lt;li&gt;Each microservice should have clear definition of scope and responsibilities.&lt;/li&gt;
   &lt;li&gt;Communicate over a common, stateless protocol (e.g. HTTP)&lt;/li&gt;
+  &lt;li&gt;Microservices in a large system can use different programing language, framework or infrastructure as long as it conform to the communication structure using a standard protocol(Typically RESTful HTTP API)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;net-core-as-a-microservices&quot;&gt;.NET Core as a microservices:&lt;/h3&gt;
 
-&lt;p&gt;.NET Core has been designed ground up by Microsoft to make it highly portable and flexible. It can be ran in a container in all the major operation systems such as Linux, Mac and the traditional Windows servers.&lt;/p&gt;
+&lt;p&gt;Microservices can be written in different programing languages and frameworks running on various type of infrastructures, It can be written in Java, NodeJs, Python or the Traditional .Net Framework. .Net Core is just one of many option out of many that can used.&lt;br /&gt;
+If you are experienced in the .NET space, .NET Core is a better option compared to the Traditional .NET framework because it has been designed ground up by Microsoft to be highly portable and flexible. It can be ran on major operation systems such as Linux, Mac and the default Windows servers.&lt;/p&gt;
 
 &lt;h3 id=&quot;create-a-dockerised-web-api&quot;&gt;Create a Dockerised Web API:&lt;/h3&gt;
 
-&lt;p&gt;Create a new project in VS2017 goto &lt;strong&gt;File &amp;gt; New &amp;gt; Project &amp;gt; ASP.NET Core Web Application&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Enter the &lt;strong&gt;Name&lt;/strong&gt;, &lt;strong&gt;Location&lt;/strong&gt; and &lt;strong&gt;Solution Name&lt;/strong&gt;. I named it &lt;strong&gt;DockerWebAPI&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Choose &lt;strong&gt;.NET Core&lt;/strong&gt;, &lt;strong&gt;ASP.NET Core 2.1&lt;/strong&gt;,  C&lt;strong&gt;hoose API&lt;/strong&gt; and Tick &lt;strong&gt;Enable Docker Support&lt;/strong&gt;  Click &lt;strong&gt;Ok&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Create a new project in VS2017 goto &lt;strong&gt;File &amp;gt; New &amp;gt; Project &amp;gt; ASP.NET Core Web Application&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Enter the &lt;strong&gt;Name&lt;/strong&gt;, &lt;strong&gt;Location&lt;/strong&gt; and &lt;strong&gt;Solution Name&lt;/strong&gt;. I named it &lt;strong&gt;DockerWebAPI&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Choose &lt;strong&gt;.NET Core&lt;/strong&gt;, &lt;strong&gt;ASP.NET Core 2.1&lt;/strong&gt;, Choose &lt;strong&gt;API&lt;/strong&gt; and Tick &lt;strong&gt;Enable Docker Support&lt;/strong&gt;  Click &lt;strong&gt;Ok&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/docker-web-api.PNG&quot; alt=&quot;.NET docker web API &quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Once the project has been created, you will see the &lt;strong&gt;DockerWebApi &amp;gt; Dockerfile&lt;/strong&gt; docker file.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once the project has been created, you will see the &lt;strong&gt;DockerWebApi &amp;gt; Dockerfile&lt;/strong&gt; docker file.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open your &lt;strong&gt;Dockerfile&lt;/strong&gt; and replace the content with the following:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  FROM microsoft/dotnet:sdk AS build-env
+  WORKDIR /app
 
-&lt;p&gt;If you are using Mac or Windows 10, you change run the application natively in docker mode
-&lt;img src=&quot;/assets/docker-web-api-run.PNG&quot; alt=&quot;.NET docker web API Run&quot; /&gt;&lt;/p&gt;
+  # Copy csproj and restore as distinct layers
+  COPY *.csproj ./
+
+  # use NuGet to restore dependencies and project-specific tools that 
+  # are specified in the project file. Can be excluded in .net 2.0
+  RUN dotnet restore 
+
+  # Copy everything else and build
+  COPY . ./
+  RUN dotnet publish -c Release -o out  #folder is out
+
+  # Build runtime image
+  FROM microsoft/dotnet:aspnetcore-runtime
+  WORKDIR /app
+  COPY --from=build-env /app/out .
+  ENTRYPOINT [&quot;dotnet&quot;, &quot;WebApplicationDocker.dll&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If you are using Mac or Windows 10, you change run the application natively in Docker mode
+  &lt;img src=&quot;/assets/docker-web-api-run.PNG&quot; alt=&quot;.NET docker web API Run&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;If you are using Windows 8 like me, you will need to install &lt;a href=&quot;https://docs.docker.com/toolbox/toolbox_install_windows/&quot;&gt;Docker Toolbox&lt;/a&gt;. Once installed you can use the Docker CLI tool called &lt;strong&gt;Docker Quickstart Terminal&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&quot;/assets/docker-terminal.PNG&quot; alt=&quot;.NET docker terminal&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Within the terminal change directory the root of your project.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the Docker terminal, change directory the root of your project, enter &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker build -t dockerwebapi:latest .&lt;/code&gt;.
+If your build is successful you should see **successfully built &lt;imageid&gt; **&lt;/imageid&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To check if your build image has been created, enter: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt;
+You should see &lt;strong&gt;dockerwebapi&lt;/strong&gt; on the top of the list of repositories returned by the command.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To test the build, You can run
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 8080:80 --name mydockerwebapi dockerwebapi&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker build .&lt;/code&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk or bugs in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all. Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the who system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade or so with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it will make the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.</summary></entry><entry><title type="html">Building your first Docker .Net core MVC image</title><link href="http://localhost:4000/backend/Create-MVC-docker-image" rel="alternate" type="text/html" title="Building your first Docker .Net core MVC image" /><published>2018-12-17T00:00:00+11:00</published><updated>2018-12-17T00:00:00+11:00</updated><id>http://localhost:4000/backend/Create-MVC-docker-image</id><content type="html" xml:base="http://localhost:4000/backend/Create-MVC-docker-image">&lt;p&gt;Once you have some idea of what Docker is and how you can download docker images and learnt how to &lt;a href=&quot;Running-Docker-and-DotNet&quot;&gt;run .NET Core on docker&lt;/a&gt; on your own machine, you are ready to learn how we can create and customise docker image for deployment.&lt;/p&gt;
+&lt;p&gt;If you are running native docker on your machine, &lt;a href=&quot;http://localhost:8080/api/values&quot;&gt;http://localhost:8080/api/values&lt;/a&gt;&lt;br /&gt;
+If you are using Docker tools, goto &lt;a href=&quot;http://192.168.99.100:8080/api/values&quot;&gt;http://192.168.99.100:8080/api/values&lt;/a&gt;
+You should the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[
+&quot;value1&quot;,
+&quot;value2&quot;
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Congrats! you have created your first Dotnet Core Webapi microservices on Docker!&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Remember the old days when Microsoft “ships” out a new IE every few years and if you found an annoying quirk in the browser? tough luck, you would have to waiting for a fair while for the changes to come through. If you are a web developer, you will either work around the quirk or not use it all. Thankfully those days are over with the ever increasing competition and rapid improvement in software delivering process. Updates to software are expected in days, not in months or years. With increasing expectation of faster bug fixes and feature update comes at a cost; Updates in a large monolithic system can be painful in many ways. A bug in small update in a large system could bring the whole system down if not managed properly. This makes rapid updates to a large complex system rather risky and fragile. To over come this issue, a new type of software architecture has emerged in the past decade with the primary focus of resolve this problem. By separating a large system into a number of small loosely coupled independent components that communicated using a common protocol, it makes the system more resilient to minor issues and less risky when it comes to updates. This style of software design is Microservices architecture.</summary></entry><entry><title type="html">Building your first Docker .Net core MVC image</title><link href="http://localhost:4000/backend/Create-MVC-docker-image" rel="alternate" type="text/html" title="Building your first Docker .Net core MVC image" /><published>2018-12-17T00:00:00+11:00</published><updated>2018-12-17T00:00:00+11:00</updated><id>http://localhost:4000/backend/Create-MVC-docker-image</id><content type="html" xml:base="http://localhost:4000/backend/Create-MVC-docker-image">&lt;p&gt;Once you have some idea of what Docker is and how you can download docker images and learnt how to &lt;a href=&quot;Running-Docker-and-DotNet&quot;&gt;run .NET Core on docker&lt;/a&gt; on your own machine, you are ready to learn how we can create and customise docker image for deployment.&lt;/p&gt;
 
 &lt;h3 id=&quot;create-and-use-a-docker-file&quot;&gt;Create and use a docker file&lt;/h3&gt;
 
@@ -176,47 +254,7 @@ There are three types of .NET core application deployments, those are:&lt;/p&gt;
 &lt;h4 id=&quot;usecase-2&quot;&gt;Usecase&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;When you unsure of the target system can support your application. This deployment type will give you more control and certainty in your deployment.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post, I will give you an overview of .NET Core deployment options There are three types of .NET core application deployments, those are:</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
-
-&lt;p&gt;Those tasks included:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CSS compilation via Less or Sass.&lt;/li&gt;
-  &lt;li&gt;Move or coping files to an output directory for deployment.&lt;/li&gt;
-  &lt;li&gt;Running unit testss and code analysis.&lt;/li&gt;
-  &lt;li&gt;Minifying and bundling javascript libraries and CSS style sheets.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;install-gulp&quot;&gt;Install Gulp&lt;/h2&gt;
-
-&lt;p&gt;The best way to install Gulp is via npm(Node Package Manager), if you are not familiar with npm please visit the &lt;a href=&quot;https://www.npmjs.com/get-npm&quot;&gt;www.npmjs.com&lt;/a&gt; for more detail.&lt;/p&gt;
-
-&lt;p&gt;I recommand that you install gulp from npm locally within your frontend application project. however you can also install Gulp globally if you wish.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open a console and change directory to your project root
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;cd yourproject
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Install Gulp on your project locally
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install --save-dev gulp
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;The &lt;strong&gt;–save-dev&lt;/strong&gt; option will add the package to development section of your &lt;strong&gt;package.json&lt;/strong&gt; file. Since Gulp will be used to assist build and deployment automations, it is not required in the production environment.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Now it’s time to creat a test gulpfile. create a gulpfile.js in your project root with the following contents:
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gulp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'test-task'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
- &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'success!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Run the task by entering the command below
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp test-task
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post, I will give you an overview of .NET Core deployment options There are three types of .NET core application deployments, those are:</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
 
 &lt;p&gt;The code base is located in &lt;a href=&quot;https://github.com/ivanzcai/gulp-demo&quot;&gt;https://github.com/ivanzcai/gulp-demo&lt;/a&gt;&lt;/p&gt;
 
@@ -260,7 +298,47 @@ npm install --save-dev gulp-uglify
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry><entry><title type="html">Docker Quick Reference</title><link href="http://localhost:4000/backend/Docker-Quick-Reference" rel="alternate" type="text/html" title="Docker Quick Reference" /><published>2018-10-12T00:00:00+11:00</published><updated>2018-10-12T00:00:00+11:00</updated><id>http://localhost:4000/backend/Docker-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Docker-Quick-Reference">&lt;p&gt;This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.&lt;/p&gt;
+&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
+
+&lt;p&gt;Those tasks included:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSS compilation via Less or Sass.&lt;/li&gt;
+  &lt;li&gt;Move or coping files to an output directory for deployment.&lt;/li&gt;
+  &lt;li&gt;Running unit testss and code analysis.&lt;/li&gt;
+  &lt;li&gt;Minifying and bundling javascript libraries and CSS style sheets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-gulp&quot;&gt;Install Gulp&lt;/h2&gt;
+
+&lt;p&gt;The best way to install Gulp is via npm(Node Package Manager), if you are not familiar with npm please visit the &lt;a href=&quot;https://www.npmjs.com/get-npm&quot;&gt;www.npmjs.com&lt;/a&gt; for more detail.&lt;/p&gt;
+
+&lt;p&gt;I recommand that you install gulp from npm locally within your frontend application project. however you can also install Gulp globally if you wish.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a console and change directory to your project root
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;cd yourproject
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install Gulp on your project locally
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install --save-dev gulp
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;The &lt;strong&gt;–save-dev&lt;/strong&gt; option will add the package to development section of your &lt;strong&gt;package.json&lt;/strong&gt; file. Since Gulp will be used to assist build and deployment automations, it is not required in the production environment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now it’s time to creat a test gulpfile. create a gulpfile.js in your project root with the following contents:
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gulp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'test-task'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'success!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the task by entering the command below
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp test-task
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Docker Quick Reference</title><link href="http://localhost:4000/backend/Docker-Quick-Reference" rel="alternate" type="text/html" title="Docker Quick Reference" /><published>2018-10-12T00:00:00+11:00</published><updated>2018-10-12T00:00:00+11:00</updated><id>http://localhost:4000/backend/Docker-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Docker-Quick-Reference">&lt;p&gt;This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.&lt;/p&gt;
 
 &lt;h2 id=&quot;useful-docker-command-lines&quot;&gt;useful docker command lines&lt;/h2&gt;
 
@@ -280,10 +358,22 @@ npm install --save-dev gulp-uglify
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ip&lt;/code&gt; To identify the IP of your docker-machine when not running on 127.0.0.1 - localhost (e.g. when using Docker Toolbox)&lt;/p&gt;
 
+&lt;h2 id=&quot;dockerhub-related&quot;&gt;Dockerhub related&lt;/h2&gt;
+&lt;p&gt;You will need to have a &lt;a href=&quot;https://hub.docker.com/&quot;&gt;Docker hub&lt;/a&gt; account to run the following command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker login&lt;/code&gt; to login&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build -t &amp;lt;Dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to build the image related to your Dockerhub username.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to push your image to Dockerhub&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -t &amp;lt;dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to run an instance of the image using the Dockerhub repository.&lt;/p&gt;
+
 &lt;h2 id=&quot;useful-links&quot;&gt;Useful links&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/&quot;&gt;Dockerizing a Note.js web app&lt;/a&gt;
-&lt;a href=&quot;https://runnable.com/docker/install-docker-on-linux&quot;&gt;Install Docker In Linux&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.</summary></entry><entry><title type="html">Deploy Docker Node.js in Redhat Linux</title><link href="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat" rel="alternate" type="text/html" title="Deploy Docker Node.js in Redhat Linux" /><published>2018-06-21T00:00:00+10:00</published><updated>2018-06-21T00:00:00+10:00</updated><id>http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat</id><content type="html" xml:base="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat">&lt;p&gt;You can use your own dockerised Node.js in your Github repository or use the my repository for this &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;Dockerize Node.js repository&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://runnable.com/docker/install-docker-on-linux&quot;&gt;Install Docker In Linux&lt;/a&gt;
+&lt;a href=&quot;https://hub.docker.com/&quot;&gt;Docker hub&lt;/a&gt; for Docker image hosting
+&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal&quot;&gt;Azure container Instance&lt;/a&gt; To get your container up and running quickly without having to worry about the underlying infrastructure.&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.</summary></entry><entry><title type="html">Deploy Docker Node.js in Redhat Linux</title><link href="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat" rel="alternate" type="text/html" title="Deploy Docker Node.js in Redhat Linux" /><published>2018-06-21T00:00:00+10:00</published><updated>2018-06-21T00:00:00+10:00</updated><id>http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat</id><content type="html" xml:base="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat">&lt;p&gt;You can use your own dockerised Node.js in your Github repository or use the my repository for this &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;Dockerize Node.js repository&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This doc assumes that you already have a server running Redhat and that the ports are open to the internet for inbound and outbound.&lt;/p&gt;
 
@@ -610,6 +700,4 @@ kubernetes          ClusterIP      10.59.240.1     &amp;lt;none&amp;gt;         
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.</summary></entry><entry><title type="html">Node.js Quick Reference</title><link href="http://localhost:4000/backend/Nodejs-Quick-Reference" rel="alternate" type="text/html" title="Node.js Quick Reference" /><published>2018-01-03T00:00:00+11:00</published><updated>2018-01-03T00:00:00+11:00</updated><id>http://localhost:4000/backend/Nodejs-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Nodejs-Quick-Reference">&lt;h3 id=&quot;useful-links&quot;&gt;Useful links&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/github/gitignore/blob/master/Node.gitignore&quot;&gt;node.js .gitignore&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Useful links</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.</summary></entry></feed>

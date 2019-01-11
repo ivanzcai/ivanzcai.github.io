@@ -66,10 +66,22 @@
 
 <p><code class="highlighter-rouge">docker-machine ip</code> To identify the IP of your docker-machine when not running on 127.0.0.1 - localhost (e.g. when using Docker Toolbox)</p>
 
+<h2 id="dockerhub-related">Dockerhub related</h2>
+<p>You will need to have a <a href="https://hub.docker.com/">Docker hub</a> account to run the following command.</p>
+
+<p><code class="highlighter-rouge">docker login</code> to login</p>
+
+<p><code class="highlighter-rouge">docker build -t &lt;Dockerhub username&gt;/&lt;image name&gt;</code> to build the image related to your Dockerhub username.<br />
+<code class="highlighter-rouge">docker push &lt;dockerhub username&gt;/&lt;image name&gt;</code> to push your image to Dockerhub</p>
+
+<p><code class="highlighter-rouge">docker run -t &lt;dockerhub username&gt;/&lt;image name&gt;</code> to run an instance of the image using the Dockerhub repository.</p>
+
 <h2 id="useful-links">Useful links</h2>
 
 <p><a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">Dockerizing a Note.js web app</a>
-<a href="https://runnable.com/docker/install-docker-on-linux">Install Docker In Linux</a></p>
+<a href="https://runnable.com/docker/install-docker-on-linux">Install Docker In Linux</a>
+<a href="https://hub.docker.com/">Docker hub</a> for Docker image hosting
+<a href="https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal">Azure container Instance</a> To get your container up and running quickly without having to worry about the underlying infrastructure.</p>
 
   </div><a class="u-url" href="/backend/Docker-Quick-Reference" hidden></a>
 </article>
