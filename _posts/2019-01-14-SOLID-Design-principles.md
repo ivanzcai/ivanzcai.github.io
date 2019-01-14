@@ -8,18 +8,18 @@ permalink: /:categories/:title
 
 This post will give you a basic explanation of what the SOLID Principles are and how we can use it. 
 
-###Why SOLID
+### Why SOLID
 
 As a programmer or software engineer, main reasons for adopting SOLID principles is to enable us to write easily maintainable, testable and flexible software in a methodological way. 
 
-###What is SOLID principles 
+### What are SOLID principles 
 
-SOLID principles are the acronyms for: 
-S = **Single** Responsibility Principle (SRP) 
-O = **Open** closed Principle (OSP) 
-L =  **Liskov** substitution Principle (LSP) 
-I  =  **Interface** Segregation Principle (ISP) 
-D = **Dependency** Inversion Principle (DIP)
+SOLID principles are the acronyms for:   
+S = **Single** Responsibility Principle (SRP)   
+O = **Open** closed Principle (OSP)   
+L =  **Liskov** substitution Principle (LSP)   
+I  =  **Interface** Segregation Principle (ISP)   
+D = **Dependency** Inversion Principle (DIP)  
 
 **Single Responsibility Principle**   
 Every class or module should have responsibility over just a single part of the functionality in a software system. 

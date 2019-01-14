@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T15:56:06+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">SOLID Design Principles</title><link href="http://localhost:4000/backend/SOLID-Design-principles" rel="alternate" type="text/html" title="SOLID Design Principles" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/SOLID-Design-principles</id><content type="html" xml:base="http://localhost:4000/backend/SOLID-Design-principles">&lt;p&gt;This post will give you a basic explanation of what the SOLID Principles are and how we can use it.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T16:01:16+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">SOLID Design Principles</title><link href="http://localhost:4000/backend/SOLID-Design-principles" rel="alternate" type="text/html" title="SOLID Design Principles" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/SOLID-Design-principles</id><content type="html" xml:base="http://localhost:4000/backend/SOLID-Design-principles">&lt;p&gt;This post will give you a basic explanation of what the SOLID Principles are and how we can use it.&lt;/p&gt;
 
-&lt;p&gt;###Why SOLID&lt;/p&gt;
+&lt;h3 id=&quot;why-solid&quot;&gt;Why SOLID&lt;/h3&gt;
 
 &lt;p&gt;As a programmer or software engineer, main reasons for adopting SOLID principles is to enable us to write easily maintainable, testable and flexible software in a methodological way.&lt;/p&gt;
 
-&lt;p&gt;###What is SOLID principles&lt;/p&gt;
+&lt;h3 id=&quot;what-are-solid-principles&quot;&gt;What are SOLID principles&lt;/h3&gt;
 
-&lt;p&gt;SOLID principles are the acronyms for: 
-S = &lt;strong&gt;Single&lt;/strong&gt; Responsibility Principle (SRP) 
-O = &lt;strong&gt;Open&lt;/strong&gt; closed Principle (OSP) 
-L =  &lt;strong&gt;Liskov&lt;/strong&gt; substitution Principle (LSP) 
-I  =  &lt;strong&gt;Interface&lt;/strong&gt; Segregation Principle (ISP) 
+&lt;p&gt;SOLID principles are the acronyms for: &lt;br /&gt;
+S = &lt;strong&gt;Single&lt;/strong&gt; Responsibility Principle (SRP) &lt;br /&gt;
+O = &lt;strong&gt;Open&lt;/strong&gt; closed Principle (OSP) &lt;br /&gt;
+L =  &lt;strong&gt;Liskov&lt;/strong&gt; substitution Principle (LSP) &lt;br /&gt;
+I  =  &lt;strong&gt;Interface&lt;/strong&gt; Segregation Principle (ISP) &lt;br /&gt;
 D = &lt;strong&gt;Dependency&lt;/strong&gt; Inversion Principle (DIP)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Single Responsibility Principle&lt;/strong&gt; &lt;br /&gt;
