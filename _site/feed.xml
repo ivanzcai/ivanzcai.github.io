@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-10T17:11:21+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">.Net SignalR Intro with Docker Demo</title><link href="http://localhost:4000/backend/Simple-SignalR-App" rel="alternate" type="text/html" title=".Net SignalR Intro with Docker Demo" /><published>2019-01-10T00:00:00+11:00</published><updated>2019-01-10T00:00:00+11:00</updated><id>http://localhost:4000/backend/Simple-SignalR-App</id><content type="html" xml:base="http://localhost:4000/backend/Simple-SignalR-App">&lt;p&gt;This purpose of this page is to give a quick summery of what SignalR is and why we should we use it.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T11:43:09+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">REST API best practice - Resources</title><link href="http://localhost:4000/backend/RESTful-API-Best-Practice-1" rel="alternate" type="text/html" title="REST API best practice -  Resources" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/RESTful-API-Best-Practice-1</id><content type="html" xml:base="http://localhost:4000/backend/RESTful-API-Best-Practice-1">&lt;p&gt;This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-resources&quot;&gt;What is resources?&lt;/h3&gt;
+
+&lt;p&gt;Resources are often representation of real world entities such as customers, invoices, accounts, etc. relationship between resources are typically nested for example each customer might have multiple accounts, each account with have multiple invoices.  Resources are represented in URIs (Universal Resource Identifier)&lt;/p&gt;
+
+&lt;h4 id=&quot;how-do-i-design-the-uris&quot;&gt;How do I design the URIs?&lt;/h4&gt;
+
+&lt;p&gt;The general rule for URI is that it should be easily understood with plain English words. Resources must be named as nouns as oppose to verbs or actions as.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For URI Format, the forward &lt;strong&gt;slash&lt;/strong&gt; (/) used in the path portion represents the hierarchical relationship between resources. For example: 
+&lt;em&gt;https://api.somecompany.com/departments/sales/employees/{employeeId}&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Hyphens&lt;/strong&gt; (-) should be used to improve the readabilities or URL
+&lt;em&gt;https://api.somecompany.com/departments/it/employees/{employeeId}/recent-pay-slips&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI should be in lowercase letters.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;File extensions should not be included in the URLs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI including queries should not exceed 8000 characters as all modern web servers are recommended to have minimum 8000 URL length support.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;archetypes&quot;&gt;Archetypes&lt;/h3&gt;
+
+&lt;p&gt;API Resource archetypes serve as a design pattern models that we can follow to design the structure and behaviours of each of our API end points. 
+Four basic archetypes in API resources are &lt;strong&gt;document, collection, store&lt;/strong&gt; and &lt;strong&gt;controller&lt;/strong&gt;.
+Each endpoint should on only be aligned to type to ensure separation of responsibilities and uniformity.&lt;/p&gt;
+
+&lt;h4 id=&quot;collection&quot;&gt;Collection&lt;/h4&gt;
+
+&lt;p&gt;A collection resource is a list of resources of zero or more of the same resource type. The resource should be plural. For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;https://api.somecompany.com/departments&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;https://api.myonlineshop.com/products&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;document&quot;&gt;Document&lt;/h4&gt;
+&lt;p&gt;A document resource is a singular object instance or a database record that typically includes both fields with values and links to other related resources. &lt;br /&gt;
+For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;https://api.somecompany.com/users/{userId}&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;https://api.myonlineshop.com/products/{productId}&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;controller&quot;&gt;Controller&lt;/h4&gt;
+&lt;p&gt;Controller resource model, some referred to as processor,  is a procedural concept that cannot be mapped to create, retrieve, update and delete. A POST to a controller will perform some task or operation such as performing computations complex operations atomically.   Even though the controller performs some action the controller is a thing and the resource is still named as a noun. For example:&lt;/p&gt;
+
+&lt;p&gt;POST  &lt;strong&gt;&lt;em&gt;https://api.myonlineshop.com/users/{userId}/password-reset&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This would trigger a reset password process for a user specified by the identified by the user Id. This will usually involve in sending a reset password email or mobile SMS to validate the end user before allowing the user update their password.   For example: &lt;br /&gt;
+POST &lt;strong&gt;&lt;em&gt;https://api.myonlineshop.com/cart/{cartId}/checkout&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case, the checkout requires a dedicated controller to accurately describe the action of the complex checkout process that a usual CRUD (Create, Retrieve, Update and Delete) operations cannot.&lt;/p&gt;
+
+&lt;h4 id=&quot;store&quot;&gt;Store&lt;/h4&gt;
+&lt;p&gt;A store resource archetype is used a client managed resource repository. It allows the client to perform CRUD action where client chooses the resource ID/URI. This archetype is not commonly used since collection type entities are usually more appropriate and sufficient in most cases.&lt;/p&gt;
+
+&lt;p&gt;GET &lt;strong&gt;&lt;em&gt;https://api.mymovieflix.com.au/users/{userId}/favourite-movie&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+PUT &lt;strong&gt;&lt;em&gt;https://api.mymovieflix.com.au/users/{userId}/favourite-movie/groundhog-day&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it for now, stay tune for more future blog on REST API best practice series.&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.</summary></entry><entry><title type="html">.Net SignalR Intro with Docker Demo</title><link href="http://localhost:4000/backend/Simple-SignalR-App" rel="alternate" type="text/html" title=".Net SignalR Intro with Docker Demo" /><published>2019-01-10T00:00:00+11:00</published><updated>2019-01-10T00:00:00+11:00</updated><id>http://localhost:4000/backend/Simple-SignalR-App</id><content type="html" xml:base="http://localhost:4000/backend/Simple-SignalR-App">&lt;p&gt;This purpose of this page is to give a quick summery of what SignalR is and why we should we use it.
 You will see how it works in the &lt;a href=&quot;#demo&quot;&gt;Docker SignalR Demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;what-is-it&quot;&gt;what is it?&lt;/h3&gt;
@@ -407,297 +472,4 @@ gpgkey=https://yum.dockerproject.org/gpg
   &lt;li&gt;Check if the image has been created by enter: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; you should see the repository &lt;strong&gt;ivancai/dockerizenodejsapp&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Run the image on your docker container:&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 8081:8080 -d ivancai/dockerizenodejsapp&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Check if the demo application has been successfully deployed, goto your favourite browser, goto &lt;strong&gt;http://yourAddressOrPublicIp.com:8081&lt;/strong&gt; you should see &lt;em&gt;hello World&lt;/em&gt; displayed.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">You can use your own dockerised Node.js in your Github repository or use the my repository for this Dockerize Node.js repository</summary></entry><entry><title type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes</title><link href="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes" rel="alternate" type="text/html" title="Apigee Edge Microgateway on Docker &amp; Kubernetes" /><published>2018-05-01T00:00:00+10:00</published><updated>2018-05-01T00:00:00+10:00</updated><id>http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes</id><content type="html" xml:base="http://localhost:4000/backend/Apigee-Edge-Microgateway-on-Docker-Kubernetes">&lt;h1 id=&quot;apigee-edge-microgateway-on-docker--kubernetes&quot;&gt;Apigee Edge Microgateway on Docker &amp;amp; Kubernetes&lt;/h1&gt;
-&lt;p&gt;This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.&lt;/p&gt;
-
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Docker installation. For more info please visit &lt;a href=&quot;https://www.docker.com/get-docker&quot;&gt;Docker home page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Account with Apigee and understanding how to setup Edge Microgateway proxies. Please see &lt;a href=&quot;https://docs.apigee.com/api-platform/microgateway/2.5.x/overview-edge-microgateway&quot;&gt;Edge Microgateway Documentation&lt;/a&gt; for more information&lt;/li&gt;
-  &lt;li&gt;Node.js 4.x or later. For more info visit &lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;Nodejs Github Release Document&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Basic understanding and experience of Docker&lt;/li&gt;
-  &lt;li&gt;If you choose to run it in a Kubernetes environment, you will need to have some experience with &lt;a href=&quot;https://kubernetes.io/&quot;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1---configuration-preperation&quot;&gt;Section 1 - Configuration Preperation&lt;/h2&gt;
-&lt;p&gt;This section is to set up two Edge Microgateway aware proxies to demonstrate how we can deploy seperate microgateway containers to be used for seperate proxy endpoints by utilizing proxy filters.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create two Microgateway aware reverse proxies in your existing Apigee portal:
-    &lt;ul&gt;
-      &lt;li&gt;edgemicro_firstproxy
-        &lt;ul&gt;
-          &lt;li&gt;Proxy Name: edgemicro_firstproxy&lt;/li&gt;
-          &lt;li&gt;Proxy Base Path: firstproxy&lt;/li&gt;
-          &lt;li&gt;Existing API http://httpbin.org/&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;edgemicro_secondproxy
-        &lt;ul&gt;
-          &lt;li&gt;Proxy Name: edgemicro_secondproxy&lt;/li&gt;
-          &lt;li&gt;Proxy Base Path: secondproxy&lt;/li&gt;
-          &lt;li&gt;Existing API http://httpbin.org/&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;In this step, you will generate a key, secret and the {org}-{env}-config.yaml for later use. This section assumes you already have node.js and npm installed on your localhost or server.&lt;/p&gt;
-
-    &lt;p&gt;Please open a terminal in your localhost/server and do the following:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Install Edge microgateway&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm install -g edgemicro
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Initialize Edge microgateway&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edgemicro init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Configure Edge microgateway and save the key and secret for later use.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edgemicro configure -o &quot;your-orgname&quot; -e &quot;your-envname&quot; -u &quot;your-username&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;If the configuration is successful, you will see a key, secret and token being displayed. The &lt;strong&gt;{org}-{env}-config.yaml&lt;/strong&gt; file has also been generated in the  &lt;strong&gt;~/.edgemicro&lt;/strong&gt; directory.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Save the key, secret and token in a text file of your choice for later use.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-2---build-docker-images&quot;&gt;Section 2 - Build docker images&lt;/h2&gt;
-&lt;p&gt;The steps in this section are to build Docker container images. To complete this section, you will need a Docker hub account(or equivalent).&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;In your localhost or server, change directory to .edgemicro. Run &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/.edgemicro/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Clone the project
-&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/zcai2672/apigee-edgemicro-docker.git&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Copy the {org}-{env}-config.yaml generated in the &lt;strong&gt;Section 1 - Configuration Preperation&lt;/strong&gt; to the ‘apigee-edgemicro-docker’ folder created from the previous step.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Switch directory
-&lt;code class=&quot;highlighter-rouge&quot;&gt;cd apigee-edgemicro-docker&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;proxyPattern: edgemicro_firstproxy*&lt;/code&gt; to the edge_config member in the {org}-{env}-config.yaml
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; edge_config:
-   proxyPattern: edgemicro_firstproxy*
-   .
-   .
-   . omitted for brevity
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Build the docker image using following command:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ORG=&quot;your-orgname&quot; --build-arg ENV=&quot;your-env&quot; -t microgateway:first .&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; to get the IMAGE_ID of the container image created in previous step.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tag the image &lt;code class=&quot;highlighter-rouge&quot;&gt;docker tag &amp;lt;image_id&amp;gt; &amp;lt;docker_hub_id&amp;gt;/microgateway:first&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Login to docker hub, run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker login&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Push the image to a container register such as Docker Hub (you can also use Google Container Register)
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;docker_hub_id&amp;gt;/microgateway:first&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Now edit the {org}-{env}-config.yaml file again by changing the proxyPattern configuration to ‘edgemicro_secondproxy*’ &lt;code class=&quot;highlighter-rouge&quot;&gt;proxyPattern: edgemicro_secondproxy*&lt;/code&gt; in the edge_config member in the {org}-{env}-config.yaml
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;edge_config:
-  proxyPattern: edgemicro_secondproxy*
-  .
-  .
-  . omitted for brevity
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Build the docker image using following command:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ORG=&quot;your-orgname&quot; --build-arg ENV=&quot;your-env&quot; -t microgateway:second .&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; to get the IMAGE_ID of image created in previous step.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker tag &amp;lt;image_id&amp;gt; &amp;lt;docker_hub_id&amp;gt;/microgateway:second&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;push the images to a container register such as Docker Hub or Google Container register
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;docker_hub_id&amp;gt;/microgateway:second&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-3---deployments&quot;&gt;Section 3 - Deployments&lt;/h2&gt;
-
-&lt;p&gt;You have two deployment options in this section, You can choose to deploy docker only in option 1 or you can deploy your images in a Kubernetes environment.&lt;/p&gt;
-
-&lt;h3 id=&quot;option-1---docker-only-deployment&quot;&gt;Option 1 - Docker only deployment&lt;/h3&gt;
-
-&lt;p&gt;For this option, you will be deploying two Docker container images, microgateway:first in port 8000 and microgateway:second in port 8001&lt;/p&gt;
-
-&lt;p&gt;You can run the the microgateway image in same local environment that you have previously set up.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;To start running  microgateway:first image
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 8000:8000 -e EDGEMICRO_ORG=&quot;your-orgname&quot; -e EDGEMICRO_ENV=&quot;your-env&quot; -e EDGEMICRO_KEY=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -e  EDGEMICRO_SECRET=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -P -it microgateway:first
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To test, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8000/firstproxy/anything&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;If deployment is successful, you should see something like this&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;To test if the filter is working, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8000/secondproxy/anything&lt;/code&gt; 
- You should get the following if the proxy filter that you have configured works.&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;message&quot;:&quot;no match found for /secondproxy/anything&quot;,&quot;status&quot;:404}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deploy the second gateway microgateway:second image
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 8001:8000 -e EDGEMICRO_ORG=&quot;your-orgname&quot; -e EDGEMICRO_ENV=&quot;your-env&quot; -e EDGEMICRO_KEY=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -e  EDGEMICRO_SECRET=&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot; -P -it microgateway:second&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To test, run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8001/secondproxy/anything&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;you should see something like this&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;Then run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://localhost:8001/firstproxy/anything&lt;/code&gt; to test the filter you have configured for this proxy. 
-   You should get the following if your filter works.
-   &lt;code class=&quot;highlighter-rouge&quot;&gt;{&quot;message&quot;:&quot;no match found for /firstproxy/anything&quot;,&quot;status&quot;:404}&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;option-2---docker-in-gcp-kubernetes-deployment&quot;&gt;Option 2 - Docker in GCP Kubernetes deployment&lt;/h3&gt;
-
-&lt;p&gt;You will need to a Google Cloud platform Account for this option. A local Kubernetes installation should also work but has not been tested at this stage.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Login to your GCP console, create your Kubernetes cluster under Kubernetes Engine section.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Run the following command to clone the Microgate way project
-&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/zcai2672/apigee-edgemicro-docker.git&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Switch directory
-&lt;code class=&quot;highlighter-rouge&quot;&gt;cd apigee-edgemicro-docker&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Create Kubernetes secret
-    &lt;ul&gt;
-      &lt;li&gt;Use the key and secrets generated in step 2 of &lt;strong&gt;Section 1 - Configuration Preperation&lt;/strong&gt; and  it to to base64
-Convert each of these values into base64. THis will help store those credentails into Kubernetes secrets.
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo -n &quot;org&quot; | base64
-echo -n &quot;env&quot; | base64
-echo -n &quot;key&quot; | base64
-echo -n &quot;secret&quot; | base64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Use the results in the configuration in the mgw-secret.yaml&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apiVersion: v1
-kind: Secret
-metadata:
-  name: mgwsecret
-type: Opaque
-data:
-  mgorg: xxxxxx
-  mgenv: xxxxxx
-  mgkey: xxxxxx
-  mgsecret: xxxxxx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;p&gt;Run this file in your kubernetes environment to create the secret configuration&lt;/p&gt;
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; kubectl create -f  mgw-secret.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;p&gt;For more info on Kubernetes secrets, please see &lt;a href=&quot;https://kubernetes.io/docs/concepts/configuration/secret/&quot;&gt;Kubernetes Secret Doc&lt;/a&gt;&lt;/p&gt;
-
-        &lt;p&gt;You can check if the secret creation by issuring the following command&lt;/p&gt;
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get secrets
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;p&gt;You will see something similar to this:&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME           TYPE       DATA      AGE
-mgwsecret      Opaque     4         23h
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create Kubernetes microgateway pods.&lt;/p&gt;
-
-    &lt;p&gt;Open mgw-pod-first.yaml and mgw-pod-second.yaml. 
-Update the placeholder for the ‘image’ member to point to the correct docker container registry location (In Step 8) for file mgw-pod-first.yaml and mgw-pod-second.yaml files.&lt;/p&gt;
-
-    &lt;p&gt;If you are using Docker hub, make sure you are logged in&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker login
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;Run the script to create the pods&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl create -f mgw-pod-first.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl create -f mgw-pod-second.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;Check if the pods has been created&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get pods
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;You will see something like this:&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME                                  READY     STATUS    RESTARTS   AGE
-edge-microgateway-first               1/2       Running   0          17h
-edge-microgateway-second              1/2       Running   0          17h
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create Kubernetes microgateway Service to expose the gateway&lt;/p&gt;
-
-    &lt;p&gt;Make sure that your selector is configured to point to the pod labels member from the step above.&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apiVersion: v1
-kind: Service
-metadata:
-  name: edge-microgateway
-  labels:
-    app: edge-microgateway
-spec:
-  ports:
-  - port: 8000
-    name: http
-  selector:
-    app: edge-microgateway
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;Check if service has been created&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl get services 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;You should see something like this:&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NAME                TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)          AGE
-edge-microgateway   LoadBalancer   xx.xx.xx.xx     xx.xx.xx.xx     8000:31827/TCP   17h
-kubernetes          ClusterIP      10.59.240.1     &amp;lt;none&amp;gt;          443/TCP          1d
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;To test the service endpoint, please make sure you are using a terminal on a seperate server or your local machine. Use generated external ip obtained from the previous step and run:&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -v http://&amp;lt;EXTERNAL-IP&amp;gt;:8000/firstproxy/anything -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;If the deployment is successful you should be see something like this:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{&quot;error&quot;:&quot;missing_authorization&quot;,&quot;error_description&quot;:&quot;Missing Authorization header&quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">Apigee Edge Microgateway on Docker &amp;amp; Kubernetes This project describe how you can setup multiple Apigee Edge Microgateways using proxy filters, docker and Kubernetes.</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">You can use your own dockerised Node.js in your Github repository or use the my repository for this Dockerize Node.js repository</summary></entry></feed>
