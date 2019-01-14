@@ -8,37 +8,36 @@ permalink: /:categories/:title
 
 This post will give you a basic explanation of what the SOLID Principles are and how we can use it. 
 
-### Why SOLID
+### Why SOLID?
 
-As a programmer or software engineer, main reasons for adopting SOLID principles is to enable us to write easily maintainable, testable and flexible software in a methodological way. 
+As a programmer or software engineer,The main reason for adopting SOLID principles is to enable us to write easily maintainable, testable and flexible software in a methodological way. 
 
-### What are SOLID principles 
+### What are SOLID principles? 
 
-SOLID principles are the acronyms for:   
+SOLID is the acronym for:   
 S = **Single** Responsibility Principle (SRP)   
 O = **Open** closed Principle (OSP)   
 L =  **Liskov** substitution Principle (LSP)   
 I  =  **Interface** Segregation Principle (ISP)   
 D = **Dependency** Inversion Principle (DIP)  
 
-**Single Responsibility Principle**   
-Every class or module should have responsibility over just a single part of the functionality in a software system. 
+**Single Responsibility Principle:** Every class or module should have responsibility over just a single part of the functionality in a software system. 
 
 
-**Open Close Principle**
+**Open Close Principle:**
 "Software entities should be open for extension, but closed for modification" 
 this means that software should be build with extensibility right from the beginning.   
 This principle ties strongly with the Single responsibility principle as each class or module should do just one thing and one thing well. This would reduce the need the same piece of code from rewritten again.  
 
-**Liskov Substitution Principle**
+**Liskov Substitution Principle:**
 Barbara Liskov state that "objects in a program should be replaceable with instance of the sub types without altering the correctness of that program"
 An analogy is that if a passenger has requested a rental car to get her from A to B, 
 car of any brand or type should satisfy her needs as it's type of a car.
 
-**Interface Segregation Principle**
+**Interface Segregation Principle:**
 "Many client-specific interfaces are better than one general-purpose interface"
 
-**Dependency Inversion Principle**
+**Dependency Inversion Principle:**
 High-level modules should not depend on low level modules. 
 
 Abstractions should not depend on the details, whereas the details should depend on abstractions. 
