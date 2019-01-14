@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T11:43:09+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">REST API best practice - Resources</title><link href="http://localhost:4000/backend/RESTful-API-Best-Practice-1" rel="alternate" type="text/html" title="REST API best practice -  Resources" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/RESTful-API-Best-Practice-1</id><content type="html" xml:base="http://localhost:4000/backend/RESTful-API-Best-Practice-1">&lt;p&gt;This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T15:53:01+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">SOLID Design Principles</title><link href="http://localhost:4000/backend/SOLID-Design-principles" rel="alternate" type="text/html" title="SOLID Design Principles" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/SOLID-Design-principles</id><content type="html" xml:base="http://localhost:4000/backend/SOLID-Design-principles">&lt;p&gt;This post will give you a basic explanation of what the SOLID Principles are and how we can use it.&lt;/p&gt;
+
+&lt;p&gt;###Why SOLID&lt;/p&gt;
+
+&lt;p&gt;As a programmer or software engineer, main reasons for adopting SOLID principles is to enable us to write easily maintainable, testable and flexible software in a methodological way.&lt;/p&gt;
+
+&lt;p&gt;###What is SOLID principles&lt;/p&gt;
+
+&lt;p&gt;SOLID principles are the acronyms for: 
+S = &lt;strong&gt;Single&lt;/strong&gt; Responsibility Principle (SRP) 
+O = &lt;strong&gt;Open&lt;/strong&gt; closed Principle (OSP) 
+L =  &lt;strong&gt;Liskov&lt;/strong&gt; substitution Principle (LSP) 
+I  =  &lt;strong&gt;Interface&lt;/strong&gt; Segregation Principle (ISP) 
+D = &lt;strong&gt;Dependency&lt;/strong&gt; Inversion Principle (DIP)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Single Responsibility Principle&lt;/strong&gt; &lt;br /&gt;
+Every class or module should have responsibility over just a single part of the functionality in a software system.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Open Close Principle&lt;/strong&gt;
+“Software entities should be open for extension, but closed for modification” 
+this means that software should be build with extensibility right from the beginning. &lt;br /&gt;
+This principle ties strongly with the Single responsibility principle as each class or module should do just one thing and one thing well. This would reduce the need the same piece of code from rewritten again.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Liskov Substitution Principle&lt;/strong&gt;
+Barbara Liskov state that “objects in a program should be replaceable with instance of the sub types without altering the correctness of that program”
+An analogy is that if a passenger has requested a rental car to get her from A to B, 
+car of any brand or type should satisfy her needs as it’s type of a car.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Interface Segregation Principle&lt;/strong&gt;
+“Many client-specific interfaces are better than one general-purpose interface”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependency Inversion Principle&lt;/strong&gt;
+High-level modules should not depend on low level modules.&lt;/p&gt;
+
+&lt;p&gt;Abstractions should not depend on the details, whereas the details should depend on abstractions. 
+In other words, The Abstractions are the templates or requirements provided by the higher level modules, it is up to the lower level modules to fulfil that requirement regardless of how it is implemented.&lt;/p&gt;
+
+&lt;p&gt;###What’s next?&lt;/p&gt;
+
+&lt;p&gt;I will create a demo in the near future to demonstrate the use of SOLID principles so tune to the blog! Thanks for your time!&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post will give you a basic explanation of what the SOLID Principles are and how we can use it.</summary></entry><entry><title type="html">REST API best practice - Resources</title><link href="http://localhost:4000/backend/RESTful-API-Best-Practice-1" rel="alternate" type="text/html" title="REST API best practice -  Resources" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/RESTful-API-Best-Practice-1</id><content type="html" xml:base="http://localhost:4000/backend/RESTful-API-Best-Practice-1">&lt;p&gt;This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-is-resources&quot;&gt;What is resources?&lt;/h3&gt;
 
@@ -63,7 +102,14 @@ POST &lt;strong&gt;&lt;em&gt;https://api.myonlineshop.com/cart/{cartId}/checkout
 &lt;p&gt;GET &lt;strong&gt;&lt;em&gt;https://api.mymovieflix.com.au/users/{userId}/favourite-movie&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
 PUT &lt;strong&gt;&lt;em&gt;https://api.mymovieflix.com.au/users/{userId}/favourite-movie/groundhog-day&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;That’s it for now, stay tune for more future blog on REST API best practice series.&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.</summary></entry><entry><title type="html">.Net SignalR Intro with Docker Demo</title><link href="http://localhost:4000/backend/Simple-SignalR-App" rel="alternate" type="text/html" title=".Net SignalR Intro with Docker Demo" /><published>2019-01-10T00:00:00+11:00</published><updated>2019-01-10T00:00:00+11:00</updated><id>http://localhost:4000/backend/Simple-SignalR-App</id><content type="html" xml:base="http://localhost:4000/backend/Simple-SignalR-App">&lt;p&gt;This purpose of this page is to give a quick summery of what SignalR is and why we should we use it.
+&lt;p&gt;That’s it for now, stay tune for more future blog on REST API best practice series.&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This is the first article of many to come about REST API best practice that I will be writing over the next few weeks. This series of article assumes you have basic knowledge of RESTful API and wants to dig a little deeper into some of intricate details on how to make it better.</summary></entry><entry><title type="html">Dotnet Quick Reference</title><link href="http://localhost:4000/2019/01/14/DOTNET-Quick-Reference.html" rel="alternate" type="text/html" title="Dotnet Quick Reference" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/2019/01/14/DOTNET-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/2019/01/14/DOTNET-Quick-Reference.html">&lt;hr /&gt;
+&lt;p&gt;layout: post
+categories: backend
+author: Ivan Cai
+title: .NET Quick reference
+permalink: /:categories/:title&lt;/p&gt;
+
+&lt;p&gt;Krestrel Server - https://webpifeed.blob.core.windows.net/webpifeed/Partners/Kestrel_1.1.pdf&lt;/p&gt;</content><author><name></name></author><summary type="html">layout: post categories: backend author: Ivan Cai title: .NET Quick reference permalink: /:categories/:title</summary></entry><entry><title type="html">.Net SignalR Intro with Docker Demo</title><link href="http://localhost:4000/backend/Simple-SignalR-App" rel="alternate" type="text/html" title=".Net SignalR Intro with Docker Demo" /><published>2019-01-10T00:00:00+11:00</published><updated>2019-01-10T00:00:00+11:00</updated><id>http://localhost:4000/backend/Simple-SignalR-App</id><content type="html" xml:base="http://localhost:4000/backend/Simple-SignalR-App">&lt;p&gt;This purpose of this page is to give a quick summery of what SignalR is and why we should we use it.
 You will see how it works in the &lt;a href=&quot;#demo&quot;&gt;Docker SignalR Demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;what-is-it&quot;&gt;what is it?&lt;/h3&gt;
@@ -319,7 +365,47 @@ There are three types of .NET core application deployments, those are:&lt;/p&gt;
 &lt;h4 id=&quot;usecase-2&quot;&gt;Usecase&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;When you unsure of the target system can support your application. This deployment type will give you more control and certainty in your deployment.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post, I will give you an overview of .NET Core deployment options There are three types of .NET core application deployments, those are:</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This post, I will give you an overview of .NET Core deployment options There are three types of .NET core application deployments, those are:</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
+
+&lt;p&gt;Those tasks included:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSS compilation via Less or Sass.&lt;/li&gt;
+  &lt;li&gt;Move or coping files to an output directory for deployment.&lt;/li&gt;
+  &lt;li&gt;Running unit testss and code analysis.&lt;/li&gt;
+  &lt;li&gt;Minifying and bundling javascript libraries and CSS style sheets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install-gulp&quot;&gt;Install Gulp&lt;/h2&gt;
+
+&lt;p&gt;The best way to install Gulp is via npm(Node Package Manager), if you are not familiar with npm please visit the &lt;a href=&quot;https://www.npmjs.com/get-npm&quot;&gt;www.npmjs.com&lt;/a&gt; for more detail.&lt;/p&gt;
+
+&lt;p&gt;I recommand that you install gulp from npm locally within your frontend application project. however you can also install Gulp globally if you wish.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a console and change directory to your project root
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;cd yourproject
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install Gulp on your project locally
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install --save-dev gulp
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;The &lt;strong&gt;–save-dev&lt;/strong&gt; option will add the package to development section of your &lt;strong&gt;package.json&lt;/strong&gt; file. Since Gulp will be used to assist build and deployment automations, it is not required in the production environment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now it’s time to creat a test gulpfile. create a gulpfile.js in your project root with the following contents:
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gulp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'test-task'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'success!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the task by entering the command below
+    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp test-task
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
 
 &lt;p&gt;The code base is located in &lt;a href=&quot;https://github.com/ivanzcai/gulp-demo&quot;&gt;https://github.com/ivanzcai/gulp-demo&lt;/a&gt;&lt;/p&gt;
 
@@ -363,113 +449,4 @@ npm install --save-dev gulp-uglify
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry><entry><title type="html">Intro To Gulp</title><link href="http://localhost:4000/frontend/Intro-To-Gulp" rel="alternate" type="text/html" title="Intro To Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Intro-To-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Intro-To-Gulp">&lt;p&gt;Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.&lt;/p&gt;
-
-&lt;p&gt;Those tasks included:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CSS compilation via Less or Sass.&lt;/li&gt;
-  &lt;li&gt;Move or coping files to an output directory for deployment.&lt;/li&gt;
-  &lt;li&gt;Running unit testss and code analysis.&lt;/li&gt;
-  &lt;li&gt;Minifying and bundling javascript libraries and CSS style sheets.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;install-gulp&quot;&gt;Install Gulp&lt;/h2&gt;
-
-&lt;p&gt;The best way to install Gulp is via npm(Node Package Manager), if you are not familiar with npm please visit the &lt;a href=&quot;https://www.npmjs.com/get-npm&quot;&gt;www.npmjs.com&lt;/a&gt; for more detail.&lt;/p&gt;
-
-&lt;p&gt;I recommand that you install gulp from npm locally within your frontend application project. however you can also install Gulp globally if you wish.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open a console and change directory to your project root
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;cd yourproject
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Install Gulp on your project locally
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install --save-dev gulp
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;The &lt;strong&gt;–save-dev&lt;/strong&gt; option will add the package to development section of your &lt;strong&gt;package.json&lt;/strong&gt; file. Since Gulp will be used to assist build and deployment automations, it is not required in the production environment.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Now it’s time to creat a test gulpfile. create a gulpfile.js in your project root with the following contents:
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gulp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'test-task'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
- &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'success!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Run the task by entering the command below
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp test-task
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Docker Quick Reference</title><link href="http://localhost:4000/backend/Docker-Quick-Reference" rel="alternate" type="text/html" title="Docker Quick Reference" /><published>2018-10-12T00:00:00+11:00</published><updated>2018-10-12T00:00:00+11:00</updated><id>http://localhost:4000/backend/Docker-Quick-Reference</id><content type="html" xml:base="http://localhost:4000/backend/Docker-Quick-Reference">&lt;p&gt;This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.&lt;/p&gt;
-
-&lt;h2 id=&quot;useful-docker-command-lines&quot;&gt;useful docker command lines&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker help&lt;/code&gt; Lists all the command options and their usage&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; Get all of the images in your local machine&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build .&lt;/code&gt; Build an image from the current path using the default Dockerfile
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build --build-arg ARG1=&quot;value1&quot;  --tag &amp;lt;image_name&amp;gt;:&amp;lt;tag&amp;gt; &amp;lt;build_location&amp;gt;&lt;/code&gt;     Build visit[docker build reference]  (https://docs.docker.com/engine/reference/commandline/build/) for more detail.&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repositoryname&amp;gt;.git#branch --tag &amp;lt;imageName&amp;gt;:&amp;lt;tagName&amp;gt;&lt;/code&gt; Build docker image from git hub.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 49160:8080 -d &amp;lt;your username&amp;gt;/&amp;lt;your app&amp;gt;&lt;/code&gt;  By default, if docker cannot locate your application image, it will do a search in https://dockerhub.com for the application image.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker rmi &amp;lt;reponsitory_name&amp;gt;:&amp;lt;tag&amp;gt;&lt;/code&gt; remove image with specific repository name and tag&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to see all the running docker containers with docker process id&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker kill &amp;lt;processId&amp;gt;&lt;/code&gt; To kill a docker process&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ip&lt;/code&gt; To identify the IP of your docker-machine when not running on 127.0.0.1 - localhost (e.g. when using Docker Toolbox)&lt;/p&gt;
-
-&lt;h2 id=&quot;dockerhub-related&quot;&gt;Dockerhub related&lt;/h2&gt;
-&lt;p&gt;You will need to have a &lt;a href=&quot;https://hub.docker.com/&quot;&gt;Docker hub&lt;/a&gt; account to run the following command.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker login&lt;/code&gt; to login&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker build -t &amp;lt;Dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to build the image related to your Dockerhub username.&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push &amp;lt;dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to push your image to Dockerhub&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -t &amp;lt;dockerhub username&amp;gt;/&amp;lt;image name&amp;gt;&lt;/code&gt; to run an instance of the image using the Dockerhub repository.&lt;/p&gt;
-
-&lt;h2 id=&quot;useful-links&quot;&gt;Useful links&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/&quot;&gt;Dockerizing a Note.js web app&lt;/a&gt;
-&lt;a href=&quot;https://runnable.com/docker/install-docker-on-linux&quot;&gt;Install Docker In Linux&lt;/a&gt;
-&lt;a href=&quot;https://hub.docker.com/&quot;&gt;Docker hub&lt;/a&gt; for Docker image hosting
-&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal&quot;&gt;Azure container Instance&lt;/a&gt; To get your container up and running quickly without having to worry about the underlying infrastructure.&lt;/p&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This quick reference is for me to keep track of useful Docker related commands and any other useful information, would be great if you also find it useful too.</summary></entry><entry><title type="html">Deploy Docker Node.js in Redhat Linux</title><link href="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat" rel="alternate" type="text/html" title="Deploy Docker Node.js in Redhat Linux" /><published>2018-06-21T00:00:00+10:00</published><updated>2018-06-21T00:00:00+10:00</updated><id>http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat</id><content type="html" xml:base="http://localhost:4000/backend/Deploy-Docker-NodeJs-Redhat">&lt;p&gt;You can use your own dockerised Node.js in your Github repository or use the my repository for this &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;Dockerize Node.js repository&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This doc assumes that you already have a server running Redhat and that the ports are open to the internet for inbound and outbound.&lt;/p&gt;
-
-&lt;h4 id=&quot;install-docker-with-yum&quot;&gt;Install Docker with Yum&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;First you need to login to the host server with system &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; privileges&lt;/li&gt;
-  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo su&lt;/code&gt; to change to your privilege to a system user&lt;/li&gt;
-  &lt;li&gt;Update your system yum package manager &lt;code class=&quot;highlighter-rouge&quot;&gt;yum update&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Enter &lt;code class=&quot;highlighter-rouge&quot;&gt;vi  /etc/yum.repos.d/docker.repo&lt;/code&gt; to open a vi editor&lt;/li&gt;
-  &lt;li&gt;Paste the following lines to the file:
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[dockerrepo]
-name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/7/
-enabled=1
-gpgcheck=1
-gpgkey=https://yum.dockerproject.org/gpg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Install Docker by run:
- &lt;code class=&quot;highlighter-rouge&quot;&gt;yum install docker-engine -y&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Start Docker, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;service docker start&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;To check if your Docker process has started, run: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker run hello-world&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;run-your-nodejs-project&quot;&gt;Run your Node.Js project&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;You can build your dockerised Node.js or use &lt;a href=&quot;https://github.com/ivanzcai/DockerizeNodeJsApp.git&quot;&gt;this demo repository&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Run: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker build https://github.com/ivanzcai/DockerizeNodeJsApp.git#master -t ivancai/dockerizenodejsapp:latest&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Check if the image has been created by enter: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt; you should see the repository &lt;strong&gt;ivancai/dockerizenodejsapp&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Run the image on your docker container:&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 8081:8080 -d ivancai/dockerizenodejsapp&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Check if the demo application has been successfully deployed, goto your favourite browser, goto &lt;strong&gt;http://yourAddressOrPublicIp.com:8081&lt;/strong&gt; you should see &lt;em&gt;hello World&lt;/em&gt; displayed.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan Cai</name></author><summary type="html">You can use your own dockerised Node.js in your Github repository or use the my repository for this Dockerize Node.js repository</summary></entry></feed>
+&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry></feed>
