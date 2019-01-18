@@ -4,7 +4,7 @@ categories: backend
 author: Ivan Cai
 title: Intro to Domain Driven Design(DDD)
 permalink: /:categories/:title
-
+---
 DDD is useful for solving complex problems 
 
 It encourages interaction with Domain Experts 
