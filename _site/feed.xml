@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-18T14:42:21+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">SOLID Design Principles</title><link href="http://localhost:4000/backend/SOLID-Design-principles" rel="alternate" type="text/html" title="SOLID Design Principles" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/SOLID-Design-principles</id><content type="html" xml:base="http://localhost:4000/backend/SOLID-Design-principles">&lt;p&gt;This post will give you a basic explanation of what the SOLID Principles are and how we can use it.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-22T17:15:38+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ivan’s Development Blog</title><subtitle>I have 12 years of industry experience ranging from Linux and Oracle database adminstration to Web Application Development. My current core experiences are in the design and implementation of Restful APIs, Apigee API management solutions and complex web applications. I am also proficient in front-end development, database schema design, stored procedures and various cloud solutions.  </subtitle><entry><title type="html">Javascript closure</title><link href="http://localhost:4000/backend/Javascript-Closure-Demystified" rel="alternate" type="text/html" title="Javascript closure" /><published>2019-01-22T00:00:00+11:00</published><updated>2019-01-22T00:00:00+11:00</updated><id>http://localhost:4000/backend/Javascript-Closure-Demystified</id><content type="html" xml:base="http://localhost:4000/backend/Javascript-Closure-Demystified">&lt;p&gt;This purpose of this post is to demystify what closure is in Javascript.&lt;br /&gt;
+If you are coming from a object orientated programming language background such as C# or Java, the best way you can associate 
+Javascript closure that you are creating a object with private variable.&lt;/p&gt;
+
+&lt;p&gt;The local variables are similar to your private properties such that you cannot directly access it. 
+However you can expose functions using the  &lt;strong&gt;return&lt;/strong&gt;  to access and update your private variables. Those return functions are similar to your public functions in your OOP language.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function CreateCar(brand){
+  
+  var mileage = 0;
+  
+  return{
+    report: function(){
+      console.log(&quot;your &quot;+brand+&quot; has travelled &quot; +mileage +&quot; miles&quot;)
+    },
+    addMileage: function(distance){
+      mileage += distance
+    }
+  };
+    
+}
+
+var newCar = CreateCar(&quot;Merc&quot;);
+
+newCar.report();
+newCar.addMileage(20);
+newCar.report();
+newCar.addMileage(20);
+newCar.report();
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ivan Cai</name></author><summary type="html">This purpose of this post is to demystify what closure is in Javascript. If you are coming from a object orientated programming language background such as C# or Java, the best way you can associate Javascript closure that you are creating a object with private variable.</summary></entry><entry><title type="html">SOLID Design Principles</title><link href="http://localhost:4000/backend/SOLID-Design-principles" rel="alternate" type="text/html" title="SOLID Design Principles" /><published>2019-01-14T00:00:00+11:00</published><updated>2019-01-14T00:00:00+11:00</updated><id>http://localhost:4000/backend/SOLID-Design-principles</id><content type="html" xml:base="http://localhost:4000/backend/SOLID-Design-principles">&lt;p&gt;This post will give you a basic explanation of what the SOLID Principles are and how we can use it.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-solid&quot;&gt;Why SOLID?&lt;/h3&gt;
 
@@ -396,48 +426,4 @@ There are three types of .NET core application deployments, those are:&lt;/p&gt;
     &lt;p&gt;You should get &lt;strong&gt;success!&lt;/strong&gt; back as a result.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;If want to learn more on Gulp please see https://github.com/ivanzcai/gulp-demo for more detail!&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry><entry><title type="html">Javascript Build Using Gulp</title><link href="http://localhost:4000/frontend/Javascript-Build-Using-Gulp" rel="alternate" type="text/html" title="Javascript Build Using Gulp" /><published>2018-12-11T00:00:00+11:00</published><updated>2018-12-11T00:00:00+11:00</updated><id>http://localhost:4000/frontend/Javascript-Build-Using-Gulp</id><content type="html" xml:base="http://localhost:4000/frontend/Javascript-Build-Using-Gulp">&lt;h1 id=&quot;gulp-demo---javascript-build&quot;&gt;Gulp Demo - Javascript build&lt;/h1&gt;
-
-&lt;p&gt;The code base is located in &lt;a href=&quot;https://github.com/ivanzcai/gulp-demo&quot;&gt;https://github.com/ivanzcai/gulp-demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This project is used for demonstrating what Gulp is and how it works. It perform a couple of simple tasks to give you a quick overview of what it does. First it converts newer js to ES5 for backward browser compitibility and copy the modified files in the stream to &lt;strong&gt;deploy&lt;/strong&gt; folder.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create package.json
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm init
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create &lt;strong&gt;deploy&lt;/strong&gt; and &lt;strong&gt;vendor&lt;/strong&gt; in the &lt;strong&gt;gulp-demo&lt;/strong&gt; root directory&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;install gulp package in your devDependencies
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install --save-dev gulp
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Verify your gulp installation
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp --version
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Install gulp cli, babel and uglify
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm install gulp-cli -g
-npm install --save-dev gulp-babel @babel/core @babel/preset-env
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;&lt;strong&gt;babel&lt;/strong&gt; is used for converting javascript to ES5 so even the older browsers can render the site.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Add fsevents library to your devDependencies in your &lt;strong&gt;package.json&lt;/strong&gt;
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fsevents&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Then run:
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;npm i -f
-npm install --save-dev gulp-uglify
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;run the default work flow
-    &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;gulp 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;If this works, you will see files generated in the &lt;strong&gt;deploy&lt;/strong&gt; folder&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For if you want to learn about gulp bundle assets in an extensive way, there are some great examples in &lt;a href=&quot;https://github.com/dowjones/gulp-bundle-assets/blob/master/docs/API.md&quot;&gt;this github repository&lt;/a&gt;&lt;/p&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp Demo - Javascript build</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>Ivan</name></author><summary type="html">Gulp is a javascript task runner and automation tool that are typically used by developers to perform repetitive tasks typically within the CI/CD devops workflow.</summary></entry></feed>
