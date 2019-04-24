@@ -1,4 +1,4 @@
-]
+
 jquery(document).ready(function(){
     jquery("#panel").hide();
     jquery("button").click(function(){
