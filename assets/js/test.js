@@ -1,8 +1,7 @@
-import * as $ from "jquery";
-
-$(document).ready(function(){
-    $("#panel").hide();
-    $("button").click(function(){
-        $("#panel").slideToggle();
+]
+jquery(document).ready(function(){
+    jquery("#panel").hide();
+    jquery("button").click(function(){
+        jquery("#panel").slideToggle();
     });
 });
